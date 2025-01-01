@@ -25,7 +25,6 @@ navigation: # Navigation links
 
 tagline: >
   Just testing - It is about to open IAIS
-  #Modern Jekyll theme focused on speed performance &amp; SEO best practices
 
 hero_img: posts/sleek_lg.jpg # Main background image: use the path from /assets/img/ => This will output /assets/img/posts/sleek_lg.jpg
 
