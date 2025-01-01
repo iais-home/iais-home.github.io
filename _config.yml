@@ -2,31 +2,30 @@
 title: Institute for Advanced Intelligence Study # your site title
 author: Jee Hang Lee # You :
 description: > # Meta description of Homepage
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
-baseurl: "/sleek" # the subpath of your site, e.g. /blog
-url: "https://janczizikow.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
+  Test page for IAIS
+baseurl: "/iais-home.github.io" # the subpath of your site, e.g. /blog
+url: "https://iais-home.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
 
 # SEO PLUGIN
 social:
-  name: Your Name
+  name: Chancellor 
   links:
-    - https://twitter.com/BenBalter
-    - https://www.facebook.com/ben.balter
-    - https://www.linkedin.com/in/BenBalter
-    - https://plus.google.com/+BenBalter
-    - https://github.com/benbalter
-    - https://keybase.io/benbalter
+    - https://www.kaist.ac.kr
+    - https://www.snu.ac.kr
+    - https://www.smu.ac.kr
+    - https://iais-home.github.io
 
 # THEME SETTINGS
 navigation: # Navigation links
   - {name: 'Home', link: '/'}
   - {name: 'About', link: '/about'}
+  - {name: 'People', link: '/people'}
+  - {name: 'Publication', link: '/publication'}
   - {name: 'Contact', link: '/contact'}
 
 tagline: >
-  Modern Jekyll theme focused on speed performance &amp; SEO best practices
+  Just testing - It is about to open IAIS
+  #Modern Jekyll theme focused on speed performance &amp; SEO best practices
 
 hero_img: posts/sleek_lg.jpg # Main background image: use the path from /assets/img/ => This will output /assets/img/posts/sleek_lg.jpg
 
