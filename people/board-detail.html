@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty Profile - IAIS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Public Sans', sans-serif; display: flex; flex-direction: column; min-height: 100vh; }
+        h1, h2, h3, h4, .font-serif { font-family: 'Source Serif 4', Georgia, serif; }
+    </style>
+</head>
+<body class="bg-[#F8F9FA] text-gray-800">
+    <div id="header-container"></div>
+
+    <main class="flex-grow">
+        <!-- 1. Top Large Navy Banner (Matching Image 2 Top Title) -->
+        <section class="bg-[#242b3d] text-white pt-14 pb-28 border-b border-gray-800">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <a href="/people/faculty.html" class="text-xs font-semibold uppercase tracking-wider text-[#E0B24D] hover:underline mb-4 inline-block">
+                    ← Back to Faculty
+                </a>
+                <h1 id="banner-name" class="text-4xl sm:text-5xl md:text-6xl font-serif tracking-tight text-white font-normal"></h1>
+            </div>
+        </section>
+
+        <!-- 2. Overlapping Card Section (Matching Image 2 Card Layout) -->
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 -mt-20 relative z-10">
+            <div class="bg-white p-6 sm:p-8 shadow-md border border-gray-100 flex flex-col sm:flex-row items-start sm:items-center gap-6 max-w-2xl">
+                <!-- Square Profile Photo -->
+                <div class="w-36 h-36 sm:w-40 sm:h-40 bg-gray-100 flex-shrink-0 overflow-hidden">
+                    <img id="profile-img" src="" alt="" class="w-full h-full object-cover">
+                </div>
+                <!-- Card Text -->
+                <div>
+                    <h2 id="card-name" class="text-2xl sm:text-3xl font-serif text-[#1b5368] font-normal mb-1"></h2>
+                    <p id="card-title" class="text-base text-gray-700 font-normal mb-3"></p>
+                    <a id="card-website" href="#" target="_blank" class="text-xs text-[#b07d4b] hover:text-[#12264A] transition-colors font-medium">
+                        Personal Website
+                    </a>
+                </div>
+            </div>
+
+            <!-- Photo Credit (Below Image 2 card) -->
+            <p id="photo-credit" class="text-[11px] text-gray-500 mt-2 ml-1"></p>
+        </div>
+
+        <!-- 3. Profile Main Content Section -->
+        <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <!-- Biography -->
+            <div class="mb-12">
+                <div id="profile-bio" class="text-base text-gray-700 leading-relaxed max-w-4xl font-normal space-y-4"></div>
+            </div>
+
+            <!-- Research Focus Areas -->
+            <div id="focus-section" class="mb-12 border-t border-gray-200 pt-8 max-w-4xl">
+                <h3 class="text-2xl font-serif font-bold text-[#12264A] mb-4">Research Focus</h3>
+                <ul id="focus-list" class="list-disc list-inside space-y-2 text-sm text-gray-700"></ul>
+            </div>
+
+            <!-- Selected Publications -->
+            <div id="pubs-section" class="border-t border-gray-200 pt-8 max-w-4xl">
+                <h3 class="text-2xl font-serif font-bold text-[#12264A] mb-4">Selected Publications</h3>
+                <ul id="pubs-list" class="space-y-3 text-sm text-gray-700"></ul>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-container"></div>
+
+    <script src="/people/faculty.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            fetch('/header.html').then(r => r.text()).then(h => document.getElementById('header-container').innerHTML = h);
+            fetch('/footer.html').then(r => r.text()).then(f => document.getElementById('footer-container').innerHTML = f);
+
+            // Read ID from URL parameter (e.g. ?id=jeehang-lee)
+            const params = new URLSearchParams(window.location.search);
+            const personId = params.get('id');
+
+            const person = (typeof FACULTY_DATA !== 'undefined')
+                ? (FACULTY_DATA.find(p => p.id === personId) || FACULTY_DATA[0])
+                : null;
+
+            if (person) {
+                document.title = `${person.name} - IAIS Faculty`;
+                document.getElementById('banner-name').textContent = person.name;
+                document.getElementById('card-name').textContent = person.name;
+                document.getElementById('card-title').textContent = person.title;
+                document.getElementById('card-website').href = person.website;
+
+                const img = document.getElementById('profile-img');
+                img.src = person.photo;
+                img.alt = person.name;
+
+                document.getElementById('photo-credit').textContent = person.photoCredit || '';
+                document.getElementById('profile-bio').innerHTML = person.bio;
+
+                // Render Research Focus
+                if (person.researchFocus && person.researchFocus.length > 0) {
+                    document.getElementById('focus-list').innerHTML = person.researchFocus
+                        .map(item => `<li>${item}</li>`).join('');
+                } else {
+                    document.getElementById('focus-section').style.display = 'none';
+                }
+
+                // Render Selected Publications
+                if (person.selectedPubs && person.selectedPubs.length > 0) {
+                    document.getElementById('pubs-list').innerHTML = person.selectedPubs
+                        .map(pub => `<li class="border-b border-gray-100 pb-2">${pub}</li>`).join('');
+                } else {
+                    document.getElementById('pubs-section').style.display = 'none';
+                }
+            }
+        });
+    </script>
+</body>
+</html>

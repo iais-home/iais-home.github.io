@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Papers - IAIS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Public Sans', sans-serif; display: flex; flex-direction: column; min-height: 100vh; }
+        h1, h2, h3, h4, .font-serif { font-family: 'Source Serif 4', Georgia, serif; }
+    </style>
+</head>
+<body class="bg-[#FAFBFD] text-gray-800">
+    <div id="header-container"></div>
+
+    <main class="flex-grow">
+        <!-- Top Navy Banner (Image Layout) -->
+        <section class="bg-[#12264A] text-white py-14 border-b border-gray-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h1 class="text-4xl md:text-5xl font-serif font-bold tracking-tight text-white">Research Papers</h1>
+                <div class="w-16 h-1 bg-[#E0B24D] mx-auto mt-4"></div>
+            </div>
+        </section>
+
+        <!-- Papers List Section -->
+        <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div class="flex justify-between items-center mb-8 border-b border-gray-200 pb-4">
+                <p id="papers-count" class="text-sm text-gray-500 font-medium"></p>
+                <div class="text-xs uppercase tracking-wider text-gray-400 font-semibold">Peer-Reviewed Journals</div>
+            </div>
+
+            <div id="papers-list" class="space-y-6"></div>
+        </section>
+    </main>
+
+    <div id="footer-container"></div>
+
+    <script src="/publications/journal.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            fetch('/header.html').then(r => r.text()).then(h => document.getElementById('header-container').innerHTML = h);
+            fetch('/footer.html').then(r => r.text()).then(f => document.getElementById('footer-container').innerHTML = f);
+
+            const countEl = document.getElementById('papers-count');
+            const listEl = document.getElementById('papers-list');
+
+            if (typeof JOURNAL_PAPERS !== 'undefined') {
+                countEl.innerHTML = `Total <strong>${JOURNAL_PAPERS.length}</strong> publications found`;
+                listEl.innerHTML = JOURNAL_PAPERS.map(p => `
+                    <article class="bg-white p-6 sm:p-8 rounded shadow-sm border border-gray-100 hover:border-[#114B74] transition-all group flex flex-col md:flex-row justify-between gap-6">
+                        <div class="flex-grow">
+                            <div class="flex items-center gap-3 mb-3">
+                                <span class="bg-[#12264A] text-white text-[10px] font-bold px-2.5 py-0.5 uppercase tracking-wider rounded">${p.year}</span>
+                                <span class="text-xs text-[#114B74] font-semibold">${p.venue}</span>
+                            </div>
+                            <a href="/publications/journal-detail.html?id=${p.id}" class="block">
+                                <h2 class="text-xl md:text-2xl font-serif font-bold text-[#12264A] group-hover:text-[#114B74] transition-colors mb-2 leading-snug">
+                                    ${p.title}
+                                </h2>
+                            </a>
+                            <p class="text-xs text-gray-600 mb-3">${p.authors}</p>
+                            <p class="text-sm text-gray-500 line-clamp-2">${p.abstract}</p>
+                        </div>
+                        <div class="flex-shrink-0 self-start md:self-center flex flex-col gap-2">
+                            <a href="/publications/journal-detail.html?id=${p.id}" class="inline-flex items-center text-xs font-bold text-[#114B74] group-hover:text-[#E0B24D] uppercase tracking-wider">
+                                View Details →
+                            </a>
+                        </div>
+                    </article>
+                `).join('');
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Paper Details - IAIS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600;700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Public Sans', sans-serif; display: flex; flex-direction: column; min-height: 100vh; }
+        h1, h2, h3, .font-serif { font-family: 'Source Serif 4', serif; }
+    </style>
+</head>
+<body class="bg-[#FAFBFD] text-gray-800">
+    <div id="header-container"></div>
+
+    <main class="flex-grow max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 w-full">
+        <a href="/publications/journal.html" class="text-xs font-bold text-[#114B74] hover:text-[#E0B24D] mb-6 inline-block">← Back to Research Papers</a>
+        
+        <article class="bg-white p-8 md:p-12 shadow-sm border border-gray-100 rounded">
+            <div class="flex items-center gap-2 mb-4">
+                <span id="p-year" class="bg-[#12264A] text-white text-xs font-bold px-2.5 py-1 rounded"></span>
+                <span id="p-venue" class="text-sm font-semibold text-[#114B74]"></span>
+            </div>
+            <h1 id="p-title" class="text-3xl md:text-4xl font-serif font-bold text-[#12264A] mb-4 leading-tight"></h1>
+            <p id="p-authors" class="text-sm text-gray-600 mb-8 pb-6 border-b border-gray-100"></p>
+
+            <h2 class="text-lg font-serif font-bold text-[#12264A] mb-3">Abstract</h2>
+            <p id="p-abstract" class="text-base text-gray-700 leading-relaxed mb-8"></p>
+
+            <div id="p-doi-box" class="pt-6 border-t border-gray-100">
+                <a id="p-doi" href="#" target="_blank" class="inline-flex items-center gap-1.5 bg-[#114B74] hover:bg-[#12264A] text-white text-xs font-semibold py-2.5 px-6 rounded transition-colors">
+                    Official Publisher Page (DOI) ↗
+                </a>
+            </div>
+        </article>
+    </main>
+
+    <div id="footer-container"></div>
+
+    <script src="/publications/journal.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            fetch('/header.html').then(r => r.text()).then(h => document.getElementById('header-container').innerHTML = h);
+            fetch('/footer.html').then(r => r.text()).then(f => document.getElementById('footer-container').innerHTML = f);
+
+            // URL의 ?id= 파라미터를 읽어 해당 데이터 바인딩
+            const id = new URLSearchParams(window.location.search).get('id');
+            const paper = JOURNAL_PAPERS.find(p => p.id === id) || JOURNAL_PAPERS[0];
+
+            document.getElementById('p-year').textContent = paper.year;
+            document.getElementById('p-venue').textContent = paper.venue;
+            document.getElementById('p-title').textContent = paper.title;
+            document.getElementById('p-authors').textContent = paper.authors;
+            document.getElementById('p-abstract').textContent = paper.abstract;
+            document.getElementById('p-doi').href = paper.doi;
+        });
+    </script>
+</body>
+</html>
