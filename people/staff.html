@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty - IAIS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;700&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Public Sans', sans-serif; display: flex; flex-direction: column; min-height: 100vh; }
+        h1, h2, h3, .font-serif { font-family: 'Source Serif 4', serif; }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <div id="header-container"></div>
+
+    <main class="flex-grow pt-16 pb-24">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-12 border-b-2 border-[#12264A] pb-6">
+                <span class="text-[#E0B24D] font-bold tracking-widest text-sm uppercase mb-2 block">People</span>
+                <h1 class="text-4xl font-serif font-bold text-[#12264A]">Faculty & Leadership</h1>
+            </div>
+            
+            <!-- Academic Track (SFI Model) -->
+            <div class="bg-white p-8 shadow-sm flex flex-col md:flex-row gap-8 items-start mb-8">
+                <div class="w-full md:w-1/4">
+                    <div class="bg-gray-200 w-full aspect-square rounded-md flex items-center justify-center text-gray-400 overflow-hidden">
+                        <!-- Placeholder for photo -->
+                        <svg class="w-20 h-20 text-gray-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path></svg>
+                    </div>
+                </div>
+                <div class="w-full md:w-3/4">
+                    <h2 class="text-3xl font-serif font-bold text-[#12264A] mb-1">Jee-Hang Lee, Ph.D.</h2>
+                    <p class="text-[#114B74] font-semibold text-lg mb-4">President & Senior Fellow (Professor)</p>
+                    
+                    <p class="text-gray-700 mb-6 leading-relaxed">
+                        Dr. Jee-Hang Lee leads the Institute for Advanced Intelligence Study (IAIS). With a Ph.D. from the University of Bath (2015) and extensive independent research leadership, his work spans Computational Neuroscience, Digital Phenomics, and Reinforcement Learning Meta-Control. Under his direction, IAIS bridges pure theoretical modeling with robust algorithmic implementations, establishing a novel dual-track research paradigm.
+                        His work is widely published in premier venues including <span class="italic">Cell Reports, ACM CHI, JMIR, Scientific Reports, and RLDM</span>.
+                    </p>
+                    
+                    <h3 class="font-bold text-gray-900 mb-2">Selected Publications (2024-2026)</h3>
+                    <ul class="list-disc list-inside text-sm text-gray-600 space-y-2">
+                        <li>Control of the human inference process through in-silico task design (Cell Reports, 2024)</li>
+                        <li>Enhancing Cognitive Functions of Older Adults With Software Robot (JMIR mHealth and uHealth, 2026)</li>
+                        <li>Talk to You More: Utilizing Self-talk as a Mechanism of Action for Alleviating Anxiety (ACM CHI, 2025)</li>
+                        <li>From Prodromal to Preclinical: Detecting Amyloid-Beta Through Mobile Gaze Analysis (Alzheimer’s & Dementia, 2025)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Affiliated Faculty -->
+            <div class="mb-6 border-b border-gray-200 pb-2 mt-12">
+                <h2 class="text-2xl font-serif font-bold text-[#12264A]">Affiliated Faculty (Scientific Advisory Board)</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+                <div class="bg-white p-6 shadow-sm border-l-4 border-[#12264A]">
+                    <h3 class="text-lg font-bold text-gray-900">Affiliated Professor (M.D., Ph.D.)</h3>
+                    <p class="text-sm text-[#114B74] mb-2">Clinical Neuroscience & Digital Biomarkers</p>
+                    <p class="text-xs text-gray-600">Guides clinical hypothesis validation, IRB design, and hospital network integration for digital therapeutics.</p>
+                </div>
+                <div class="bg-white p-6 shadow-sm border-l-4 border-[#12264A]">
+                    <h3 class="text-lg font-bold text-gray-900">Affiliated Professor (Ph.D.)</h3>
+                    <p class="text-sm text-[#114B74] mb-2">Psychometrics & Cognitive Psychology</p>
+                    <p class="text-xs text-gray-600">Leads cognitive-behavioral experiment design and psychometric validation of digital phenotyping frameworks.</p>
+                </div>
+                <div class="bg-white p-6 shadow-sm border-l-4 border-[#12264A]">
+                    <h3 class="text-lg font-bold text-gray-900">Affiliated Professor (Ph.D.)</h3>
+                    <p class="text-sm text-[#114B74] mb-2">Computational Law & Jurisprudence</p>
+                    <p class="text-xs text-gray-600">Defines formalization rules for legal systems and leads normative modeling for AI safety and alignment.</p>
+                </div>
+            </div>
+            
+            <!-- Engineering Track (Igalia Model) -->
+            <div class="mb-6 border-b border-gray-200 pb-2 mt-12">
+                <h2 class="text-2xl font-serif font-bold text-[#12264A]">Engineering Track</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white p-6 shadow-sm">
+                    <h3 class="text-xl font-bold text-[#12264A]">Chief Research Engineer</h3>
+                    <p class="text-gray-600 mt-2 text-sm leading-relaxed">
+                        Leads the AI system architecture and implementation of computational frameworks. Translates formal mathematical models from the Academic Track into robust, scalable software benchmarks and digital therapeutic systems.
+                    </p>
+                </div>
+                <div class="bg-white p-6 shadow-sm">
+                    <h3 class="text-xl font-bold text-[#12264A]">Staff / Research Engineer</h3>
+                    <p class="text-gray-600 mt-2 text-sm leading-relaxed">
+                        Specializes in algorithm prototyping, rPPG signal processing, and foundation model infrastructure. Drives the execution of "In the wild" longitudinal cohort deployments and continuous model optimization.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-container"></div>
+    <script src="/js/main.js"></script>
+</body>
+</html>
