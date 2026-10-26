@@ -3,8 +3,8 @@ const FACULTY_DATA = [
   {
     id: "jeehang-lee",
     name: "Jee-Hang Lee, Ph.D.",
-    title: "President & Senior Fellow (Professor)",
-    subTitle: "Computational Neuroscience & AI Meta-Control",
+    title: "President, Reader",
+    subTitle: "Assistant Professor @ Sangmyung University, KR",
     website: "https://iais.re.kr",
     photo: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80",
     photoCredit: "Courtesy of IAIS",

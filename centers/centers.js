@@ -101,7 +101,7 @@ const CENTERS_DATA = [
         <li><strong>Agentic Self-Talk Mechanisms:</strong> Engineering conversational AI agents that guide patients through structured cognitive restructuring.</li>
       </ul>
     `,
-    lead: "Affiliated Faculty in Psychometrics & Cognitive Science",
+    lead: "Dr. Jee-Hang Lee (Center Director)",
     keyPapers: [
       "Talk to You More, Listen to You More: Utilizing Self-talk as a Mechanism of Action for Alleviating Anxiety (ACM CHI 2025)",
       "Response Time Dynamics From Noncognitive EMA as a Proxy for Geriatric Depression (JMIR Aging, 2026)"
