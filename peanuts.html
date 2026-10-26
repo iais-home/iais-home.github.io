@@ -78,7 +78,7 @@
             </div>
         </section>
 
-        <!-- 1. News Section -->
+        <!-- 1. News Section (Links to whats-new.html & news-template.html) -->
         <section class="pt-16 pb-12 bg-white">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex justify-between items-end mb-8 border-b border-gray-200 pb-3">
@@ -88,13 +88,14 @@
                             <span class="block h-[3px] w-12 bg-[#E0B24D] mt-2"></span>
                         </h2>
                     </div>
-                    <a href="news/news-template.html" class="text-xs font-bold tracking-wider text-[#114B74] hover:text-[#E0B24D] transition-colors flex items-center gap-1">
+                    <!-- MORE NEWS + links to the List Page -->
+                    <a href="news/whats-new.html" class="text-xs font-bold tracking-wider text-[#114B74] hover:text-[#E0B24D] transition-colors flex items-center gap-1">
                         MORE NEWS <span class="text-base leading-none font-bold">+</span>
                     </a>
                 </div>
                 
                 <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                    <!-- News Card 1 (Links to news/news-template.html) -->
+                    <!-- News Card 1 (Links to Detail Page) -->
                     <div class="flex flex-col justify-between group">
                         <div>
                             <span class="text-[11px] font-bold tracking-wider text-gray-500 uppercase block mb-3">INSTITUTE NEWS</span>
@@ -177,7 +178,6 @@
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <!-- Research Block 1 -->
                     <a href="#" class="group relative bg-[#12264A] h-52 flex flex-col items-center justify-center p-6 text-center shadow-sm hover:shadow-lg transition-all transform hover:-translate-y-1">
                         <h3 class="text-2xl font-serif font-bold text-white group-hover:text-[#E0B24D] transition-colors">
                             Cognitive Architecture
@@ -187,7 +187,6 @@
                         </p>
                     </a>
 
-                    <!-- Research Block 2 -->
                     <a href="#" class="group relative bg-[#114B74] h-52 flex flex-col items-center justify-center p-6 text-center shadow-sm hover:shadow-lg transition-all transform hover:-translate-y-1">
                         <h3 class="text-2xl font-serif font-bold text-white group-hover:text-[#E0B24D] transition-colors">
                             AI Alignment
@@ -197,7 +196,6 @@
                         </p>
                     </a>
 
-                    <!-- Research Block 3 -->
                     <a href="#" class="group relative bg-[#DCA642] h-52 flex flex-col items-center justify-center p-6 text-center shadow-sm hover:shadow-lg transition-all transform hover:-translate-y-1">
                         <h3 class="text-2xl font-serif font-bold text-[#12264A] group-hover:text-black transition-colors">
                             Embodied AI
@@ -273,18 +271,31 @@
     <div id="footer-container"></div>
 
     <script>
+        // Automatic Path Resolution Component Loader
         async function loadComponents() {
             try {
-                const headerRes = await fetch('header.html');
-                if (headerRes.ok) document.getElementById('header-container').innerHTML = await headerRes.text();
+                const isSub = window.location.pathname.includes('/news/') ||
+                              window.location.pathname.includes('/about/') ||
+                              window.location.pathname.includes('/people/');
+                const prefix = isSub ? '../' : './';
+
+                const headerRes = await fetch(prefix + 'header.html');
+                if (headerRes.ok) {
+                    let html = await headerRes.text();
+                    document.getElementById('header-container').innerHTML = html.replaceAll('{{PREFIX}}', prefix);
+                }
                 
-                const footerRes = await fetch('footer.html');
-                if (footerRes.ok) document.getElementById('footer-container').innerHTML = await footerRes.text();
+                const footerRes = await fetch(prefix + 'footer.html');
+                if (footerRes.ok) {
+                    let html = await footerRes.text();
+                    document.getElementById('footer-container').innerHTML = html.replaceAll('{{PREFIX}}', prefix);
+                }
             } catch (e) {
                 console.error("Component load failed:", e);
             }
         }
 
+        // Slider Logic
         let currentSlide = 0;
         const totalSlides = 3;
         let slideInterval;
