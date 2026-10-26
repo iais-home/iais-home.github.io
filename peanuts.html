@@ -78,7 +78,7 @@
             </div>
         </section>
 
-        <!-- 1. News Section (news-data.js 연동) -->
+        <!-- 1. News Section -->
         <section class="pt-16 pb-12 bg-white">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex justify-between items-end mb-8 border-b border-gray-200 pb-3">
@@ -93,61 +93,59 @@
                     </a>
                 </div>
                 
-                <!-- 동적으로 채워지는 4개 카드 영역 -->
-                <div id="home-news-grid" class="grid grid-cols-1 md:grid-cols-4 gap-8"></div>
+                <div id="home-news-grid" class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                    <!-- Javascript will populate this -->
+                </div>
             </div>
         </section>
 
-        <!-- 2. Research Section (4대 Centers 연결) -->
+        <!-- 2. Research Section -->
         <section class="pt-8 pb-16 bg-white">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex justify-between items-end mb-8 border-b border-gray-200 pb-3">
                     <div>
                         <h2 class="text-3xl font-serif font-bold text-[#12264A] inline-block relative">
-                            Research
+                            Research Centers
                             <span class="block h-[3px] w-12 bg-[#E0B24D] mt-2"></span>
                         </h2>
                     </div>
                     <a href="/centers/centers.html" class="text-xs font-bold tracking-wider text-[#114B74] hover:text-[#E0B24D] transition-colors flex items-center gap-1">
-                        ALL RESEARCH <span class="text-base leading-none font-bold">+</span>
+                        ALL CENTERS <span class="text-base leading-none font-bold">+</span>
                     </a>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <!-- Center 1: Dark Navy -->
                     <a href="/centers/center-detail.html?id=neuro-ai" class="group relative bg-[#12264A] h-52 flex flex-col items-center justify-center p-6 text-center shadow-sm hover:shadow-lg transition-all transform hover:-translate-y-1">
                         <h3 class="text-2xl font-serif font-bold text-white group-hover:text-[#E0B24D] transition-colors">
-                            Cognitive Architecture
+                            Neuroscience-Inspired AI
                         </h3>
                         <p class="text-xs text-gray-300 mt-3 font-light max-w-xs">
-                            Neuroscience-Inspired AI: Biological neural circuits and prefrontal meta-control
+                            Modeling biological brain networks and prefrontal meta-control for adaptive agents
                         </p>
                     </a>
 
-                    <!-- Center 2: Slate Blue -->
                     <a href="/centers/center-detail.html?id=comp-law" class="group relative bg-[#114B74] h-52 flex flex-col items-center justify-center p-6 text-center shadow-sm hover:shadow-lg transition-all transform hover:-translate-y-1">
                         <h3 class="text-2xl font-serif font-bold text-white group-hover:text-[#E0B24D] transition-colors">
-                            AI Alignment & Law
+                            Computational Law
                         </h3>
                         <p class="text-xs text-blue-100 mt-3 font-light max-w-xs">
-                            Computational Law: Formal deontic logic and neuro-symbolic verification
+                            Formal verification and neuro-symbolic logic guarantees for safe intelligence
                         </p>
                     </a>
 
-                    <!-- Center 3: Gold / Ochre -->
                     <a href="/centers/center-detail.html?id=medipharm-ai" class="group relative bg-[#DCA642] h-52 flex flex-col items-center justify-center p-6 text-center shadow-sm hover:shadow-lg transition-all transform hover:-translate-y-1">
                         <h3 class="text-2xl font-serif font-bold text-[#12264A] group-hover:text-black transition-colors">
-                            Digital Phenomics
+                            Medicine & Pharma AI
                         </h3>
                         <p class="text-xs text-[#12264A]/80 mt-3 font-medium max-w-xs">
-                            Medicine & Pharma AI: Virtual-net micro fundamental models for physiological signals
+                            In-the-wild physical and clinical interactions grounded in sensorimotor feedback
                         </p>
                     </a>
                 </div>
             </div>
         </section>
 
-        <!-- 3. Activities Section (activities.js 연동) -->
+        <!-- 3. Activities Section -->
         <section class="py-16 bg-[#F4F6F9] border-t border-gray-200">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex justify-between items-end mb-8 border-b border-gray-300 pb-3">
@@ -162,8 +160,9 @@
                     </a>
                 </div>
 
-                <!-- 동적으로 채워지는 3개 행사 영역 -->
-                <div id="home-activities-grid" class="grid grid-cols-1 md:grid-cols-3 gap-6"></div>
+                <div id="home-activities-grid" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Javascript will populate this -->
+                </div>
             </div>
         </section>
     </main>
@@ -171,7 +170,7 @@
     <!-- Footer -->
     <div id="footer-container"></div>
 
-    <!-- 데이터 파일 로드 -->
+    <!-- Data Scripts -->
     <script src="/news/news-data.js"></script>
     <script src="/news/activities.js"></script>
 
@@ -189,7 +188,7 @@
             }
         }
 
-        // 2. 메인 화면 News 섹션 자동 렌더링 (최신 4개)
+        // 2. 메인 화면 News 섹션 자동 렌더링
         function renderHomeNews() {
             const container = document.getElementById('home-news-grid');
             if (!container || typeof NEWS_DATA === 'undefined') return;
@@ -211,7 +210,7 @@
             `).join('');
         }
 
-        // 3. 메인 화면 Activities 섹션 자동 렌더링 (최신 3개)
+        // 3. 메인 화면 Activities 섹션 자동 렌더링
         function renderHomeActivities() {
             const container = document.getElementById('home-activities-grid');
             if (!container || typeof ACTIVITIES_DATA === 'undefined') return;
