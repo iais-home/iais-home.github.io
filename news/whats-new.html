@@ -24,7 +24,7 @@
     <div id="header-container"></div>
 
     <main class="flex-grow">
-        <!-- Top Navy Banner (Matching Image 3) -->
+        <!-- Top Navy Banner -->
         <section class="bg-[#12264A] text-white py-14 border-b border-gray-800">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                 <h1 class="text-4xl md:text-5xl font-serif font-bold tracking-tight text-white">
@@ -42,14 +42,14 @@
             </div>
 
             <div class="space-y-8">
-                <!-- Article 1 (Links to Detail) -->
+                <!-- Article 1 -->
                 <article class="bg-white p-6 sm:p-8 shadow-sm border border-gray-100 hover:border-[#114B74] transition-all group flex flex-col md:flex-row justify-between gap-6">
                     <div class="flex-grow">
                         <div class="flex items-center gap-3 mb-3">
                             <span class="bg-[#114B74] text-white text-[10px] font-bold px-2.5 py-0.5 uppercase tracking-wider">Institute News</span>
                             <span class="text-xs text-gray-400 font-medium">October 21, 2026</span>
                         </div>
-                        <a href="news-template.html" class="block">
+                        <a href="/news/news-template.html" class="block">
                             <h2 class="text-xl md:text-2xl font-serif font-bold text-[#12264A] group-hover:text-[#114B74] transition-colors mb-3 leading-snug">
                                 IAIS Officially Launches the Center for Neuro-Symbolic AI
                             </h2>
@@ -59,7 +59,7 @@
                         </p>
                     </div>
                     <div class="flex-shrink-0 self-start md:self-center">
-                        <a href="news-template.html" class="inline-flex items-center text-xs font-bold text-[#114B74] group-hover:text-[#E0B24D] uppercase tracking-wider">
+                        <a href="/news/news-template.html" class="inline-flex items-center text-xs font-bold text-[#114B74] group-hover:text-[#E0B24D] uppercase tracking-wider">
                             Read Article →
                         </a>
                     </div>
@@ -72,7 +72,7 @@
                             <span class="bg-[#12264A] text-white text-[10px] font-bold px-2.5 py-0.5 uppercase tracking-wider">Award</span>
                             <span class="text-xs text-gray-400 font-medium">October 15, 2026</span>
                         </div>
-                        <a href="news-template.html" class="block">
+                        <a href="/news/news-template.html" class="block">
                             <h2 class="text-xl md:text-2xl font-serif font-bold text-[#12264A] group-hover:text-[#114B74] transition-colors mb-3 leading-snug">
                                 Dr. Elena Rostova Receives the Global AI Award
                             </h2>
@@ -82,7 +82,7 @@
                         </p>
                     </div>
                     <div class="flex-shrink-0 self-start md:self-center">
-                        <a href="news-template.html" class="inline-flex items-center text-xs font-bold text-[#114B74] group-hover:text-[#E0B24D] uppercase tracking-wider">
+                        <a href="/news/news-template.html" class="inline-flex items-center text-xs font-bold text-[#114B74] group-hover:text-[#E0B24D] uppercase tracking-wider">
                             Read Article →
                         </a>
                     </div>
@@ -95,7 +95,7 @@
                             <span class="bg-[#114B74] text-white text-[10px] font-bold px-2.5 py-0.5 uppercase tracking-wider">Research Highlights</span>
                             <span class="text-xs text-gray-400 font-medium">October 02, 2026</span>
                         </div>
-                        <a href="news-template.html" class="block">
+                        <a href="/news/news-template.html" class="block">
                             <h2 class="text-xl md:text-2xl font-serif font-bold text-[#12264A] group-hover:text-[#114B74] transition-colors mb-3 leading-snug">
                                 Breakthrough in Few-Shot Learning Framework
                             </h2>
@@ -105,7 +105,7 @@
                         </p>
                     </div>
                     <div class="flex-shrink-0 self-start md:self-center">
-                        <a href="news-template.html" class="inline-flex items-center text-xs font-bold text-[#114B74] group-hover:text-[#E0B24D] uppercase tracking-wider">
+                        <a href="/news/news-template.html" class="inline-flex items-center text-xs font-bold text-[#114B74] group-hover:text-[#E0B24D] uppercase tracking-wider">
                             Read Article →
                         </a>
                     </div>
@@ -118,7 +118,7 @@
                             <span class="bg-gray-700 text-white text-[10px] font-bold px-2.5 py-0.5 uppercase tracking-wider">Announcement</span>
                             <span class="text-xs text-gray-400 font-medium">September 28, 2026</span>
                         </div>
-                        <a href="news-template.html" class="block">
+                        <a href="/news/news-template.html" class="block">
                             <h2 class="text-xl md:text-2xl font-serif font-bold text-[#12264A] group-hover:text-[#114B74] transition-colors mb-3 leading-snug">
                                 Call for Papers: Special Issue on Quantum Intelligence
                             </h2>
@@ -128,7 +128,7 @@
                         </p>
                     </div>
                     <div class="flex-shrink-0 self-start md:self-center">
-                        <a href="news-template.html" class="inline-flex items-center text-xs font-bold text-[#114B74] group-hover:text-[#E0B24D] uppercase tracking-wider">
+                        <a href="/news/news-template.html" class="inline-flex items-center text-xs font-bold text-[#114B74] group-hover:text-[#E0B24D] uppercase tracking-wider">
                             Read Article →
                         </a>
                     </div>
@@ -142,22 +142,11 @@
     <script>
         async function loadComponents() {
             try {
-                const isSub = window.location.pathname.includes('/news/') ||
-                              window.location.pathname.includes('/about/') ||
-                              window.location.pathname.includes('/people/');
-                const prefix = isSub ? '../' : './';
-
-                const headerRes = await fetch(prefix + 'header.html');
-                if (headerRes.ok) {
-                    let html = await headerRes.text();
-                    document.getElementById('header-container').innerHTML = html.replaceAll('{{PREFIX}}', prefix);
-                }
+                const headerRes = await fetch('/header.html');
+                if (headerRes.ok) document.getElementById('header-container').innerHTML = await headerRes.text();
                 
-                const footerRes = await fetch(prefix + 'footer.html');
-                if (footerRes.ok) {
-                    let html = await footerRes.text();
-                    document.getElementById('footer-container').innerHTML = html.replaceAll('{{PREFIX}}', prefix);
-                }
+                const footerRes = await fetch('/footer.html');
+                if (footerRes.ok) document.getElementById('footer-container').innerHTML = await footerRes.text();
             } catch (e) {
                 console.error("Component load failed:", e);
             }

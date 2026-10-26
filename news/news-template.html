@@ -24,7 +24,7 @@
     <div id="header-container"></div>
 
     <main class="flex-grow">
-        <!-- Top Navy Banner (Matching Image 3) -->
+        <!-- Top Navy Banner -->
         <section class="bg-[#12264A] text-white py-14 border-b border-gray-800">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                 <h1 class="text-4xl md:text-5xl font-serif font-bold tracking-tight text-white">
@@ -38,9 +38,9 @@
         <article class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
             <!-- Breadcrumbs -->
             <div class="flex items-center space-x-2 text-xs text-gray-500 mb-8 uppercase tracking-wider">
-                <a href="../peanuts.html" class="hover:text-[#114B74]">Home</a>
+                <a href="/peanuts.html" class="hover:text-[#114B74]">Home</a>
                 <span>/</span>
-                <a href="whats-new.html" class="hover:text-[#114B74]">News</a>
+                <a href="/news/whats-new.html" class="hover:text-[#114B74]">News</a>
                 <span>/</span>
                 <span class="text-gray-700 font-semibold">Institute News</span>
             </div>
@@ -94,10 +94,10 @@
 
             <!-- Back to News List Button -->
             <div class="mt-14 pt-8 border-t border-gray-200 flex justify-between items-center">
-                <a href="whats-new.html" class="inline-flex items-center text-sm font-semibold text-[#114B74] hover:text-[#E0B24D] transition-colors">
+                <a href="/news/whats-new.html" class="inline-flex items-center text-sm font-semibold text-[#114B74] hover:text-[#E0B24D] transition-colors">
                     ← Back to News List
                 </a>
-                <a href="../peanuts.html" class="text-xs text-gray-500 hover:text-gray-900 transition-colors">
+                <a href="/peanuts.html" class="text-xs text-gray-500 hover:text-gray-900 transition-colors">
                     Go to Home
                 </a>
             </div>
@@ -109,22 +109,11 @@
     <script>
         async function loadComponents() {
             try {
-                const isSub = window.location.pathname.includes('/news/') ||
-                              window.location.pathname.includes('/about/') ||
-                              window.location.pathname.includes('/people/');
-                const prefix = isSub ? '../' : './';
-
-                const headerRes = await fetch(prefix + 'header.html');
-                if (headerRes.ok) {
-                    let html = await headerRes.text();
-                    document.getElementById('header-container').innerHTML = html.replaceAll('{{PREFIX}}', prefix);
-                }
+                const headerRes = await fetch('/header.html');
+                if (headerRes.ok) document.getElementById('header-container').innerHTML = await headerRes.text();
                 
-                const footerRes = await fetch(prefix + 'footer.html');
-                if (footerRes.ok) {
-                    let html = await footerRes.text();
-                    document.getElementById('footer-container').innerHTML = html.replaceAll('{{PREFIX}}', prefix);
-                }
+                const footerRes = await fetch('/footer.html');
+                if (footerRes.ok) document.getElementById('footer-container').innerHTML = await footerRes.text();
             } catch (e) {
                 console.error("Component load failed:", e);
             }
