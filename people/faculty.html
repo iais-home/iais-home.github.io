@@ -5,94 +5,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Faculty - IAIS</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;700&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Public Sans', sans-serif; display: flex; flex-direction: column; min-height: 100vh; }
-        h1, h2, h3, .font-serif { font-family: 'Source Serif 4', serif; }
+        h1, h2, h3, h4, .font-serif { font-family: 'Source Serif 4', Georgia, serif; }
     </style>
 </head>
-<body class="bg-gray-50">
+<body class="bg-[#F2F3F5] text-gray-800">
+    <!-- Header -->
     <div id="header-container"></div>
 
-    <main class="flex-grow pt-16 pb-24">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="mb-12 border-b-2 border-[#12264A] pb-6">
-                <span class="text-[#E0B24D] font-bold tracking-widest text-sm uppercase mb-2 block">People</span>
-                <h1 class="text-4xl font-serif font-bold text-[#12264A]">Faculty & Leadership</h1>
+    <main class="flex-grow">
+        <!-- Top Navy Banner -->
+        <section class="bg-[#12264A] text-white py-14 border-b border-gray-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h1 class="text-4xl md:text-5xl font-serif font-bold tracking-tight text-white">Faculty</h1>
+                <div class="w-16 h-1 bg-[#E0B24D] mx-auto mt-4"></div>
             </div>
-            
-            <!-- Academic Track (SFI Model) -->
-            <div class="bg-white p-8 shadow-sm flex flex-col md:flex-row gap-8 items-start mb-8">
-                <div class="w-full md:w-1/4">
-                    <div class="bg-gray-200 w-full aspect-square rounded-md flex items-center justify-center text-gray-400 overflow-hidden">
-                        <!-- Placeholder for photo -->
-                        <svg class="w-20 h-20 text-gray-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path></svg>
-                    </div>
-                </div>
-                <div class="w-full md:w-3/4">
-                    <h2 class="text-3xl font-serif font-bold text-[#12264A] mb-1">Jee-Hang Lee, Ph.D.</h2>
-                    <p class="text-[#114B74] font-semibold text-lg mb-4">President & Senior Fellow (Professor)</p>
-                    
-                    <p class="text-gray-700 mb-6 leading-relaxed">
-                        Dr. Jee-Hang Lee leads the Institute for Advanced Intelligence Study (IAIS). With a Ph.D. from the University of Bath (2015) and extensive independent research leadership, his work spans Computational Neuroscience, Digital Phenomics, and Reinforcement Learning Meta-Control. Under his direction, IAIS bridges pure theoretical modeling with robust algorithmic implementations, establishing a novel dual-track research paradigm.
-                        His work is widely published in premier venues including <span class="italic">Cell Reports, ACM CHI, JMIR, Scientific Reports, and RLDM</span>.
-                    </p>
-                    
-                    <h3 class="font-bold text-gray-900 mb-2">Selected Publications (2024-2026)</h3>
-                    <ul class="list-disc list-inside text-sm text-gray-600 space-y-2">
-                        <li>Control of the human inference process through in-silico task design (Cell Reports, 2024)</li>
-                        <li>Enhancing Cognitive Functions of Older Adults With Software Robot (JMIR mHealth and uHealth, 2026)</li>
-                        <li>Talk to You More: Utilizing Self-talk as a Mechanism of Action for Alleviating Anxiety (ACM CHI, 2025)</li>
-                        <li>From Prodromal to Preclinical: Detecting Amyloid-Beta Through Mobile Gaze Analysis (Alzheimer’s & Dementia, 2025)</li>
-                    </ul>
-                </div>
-            </div>
+        </section>
 
-            <!-- Affiliated Faculty -->
-            <div class="mb-6 border-b border-gray-200 pb-2 mt-12">
-                <h2 class="text-2xl font-serif font-bold text-[#12264A]">Affiliated Faculty (Scientific Advisory Board)</h2>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-                <div class="bg-white p-6 shadow-sm border-l-4 border-[#12264A]">
-                    <h3 class="text-lg font-bold text-gray-900">Affiliated Professor (M.D., Ph.D.)</h3>
-                    <p class="text-sm text-[#114B74] mb-2">Clinical Neuroscience & Digital Biomarkers</p>
-                    <p class="text-xs text-gray-600">Guides clinical hypothesis validation, IRB design, and hospital network integration for digital therapeutics.</p>
-                </div>
-                <div class="bg-white p-6 shadow-sm border-l-4 border-[#12264A]">
-                    <h3 class="text-lg font-bold text-gray-900">Affiliated Professor (Ph.D.)</h3>
-                    <p class="text-sm text-[#114B74] mb-2">Psychometrics & Cognitive Psychology</p>
-                    <p class="text-xs text-gray-600">Leads cognitive-behavioral experiment design and psychometric validation of digital phenotyping frameworks.</p>
-                </div>
-                <div class="bg-white p-6 shadow-sm border-l-4 border-[#12264A]">
-                    <h3 class="text-lg font-bold text-gray-900">Affiliated Professor (Ph.D.)</h3>
-                    <p class="text-sm text-[#114B74] mb-2">Computational Law & Jurisprudence</p>
-                    <p class="text-xs text-gray-600">Defines formalization rules for legal systems and leads normative modeling for AI safety and alignment.</p>
-                </div>
-            </div>
-            
-            <!-- Engineering Track (Igalia Model) -->
-            <div class="mb-6 border-b border-gray-200 pb-2 mt-12">
-                <h2 class="text-2xl font-serif font-bold text-[#12264A]">Engineering Track</h2>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="bg-white p-6 shadow-sm">
-                    <h3 class="text-xl font-bold text-[#12264A]">Chief Research Engineer</h3>
-                    <p class="text-gray-600 mt-2 text-sm leading-relaxed">
-                        Leads the AI system architecture and implementation of computational frameworks. Translates formal mathematical models from the Academic Track into robust, scalable software benchmarks and digital therapeutic systems.
-                    </p>
-                </div>
-                <div class="bg-white p-6 shadow-sm">
-                    <h3 class="text-xl font-bold text-[#12264A]">Staff / Research Engineer</h3>
-                    <p class="text-gray-600 mt-2 text-sm leading-relaxed">
-                        Specializes in algorithm prototyping, rPPG signal processing, and foundation model infrastructure. Drives the execution of "In the wild" longitudinal cohort deployments and continuous model optimization.
-                    </p>
-                </div>
-            </div>
-        </div>
+        <!-- SFI-Style 2-Column Faculty Grid (Matching Image 1) -->
+        <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div id="faculty-grid" class="grid grid-cols-1 md:grid-cols-2 gap-6"></div>
+        </section>
     </main>
 
+    <!-- Footer -->
     <div id="footer-container"></div>
-    <script src="/js/main.js"></script>
+
+    <script src="/people/faculty.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            fetch('/header.html').then(r => r.text()).then(h => document.getElementById('header-container').innerHTML = h);
+            fetch('/footer.html').then(r => r.text()).then(f => document.getElementById('footer-container').innerHTML = f);
+
+            const grid = document.getElementById('faculty-grid');
+            if (typeof FACULTY_DATA !== 'undefined') {
+                grid.innerHTML = FACULTY_DATA.map(m => `
+                    <div class="bg-white p-5 shadow-sm border border-gray-100 flex items-center gap-6 hover:shadow-md transition-shadow">
+                        <!-- Photo Left -->
+                        <a href="/people/faculty-detail.html?id=${m.id}" class="flex-shrink-0 block w-28 h-28 sm:w-32 sm:h-32 bg-gray-100 overflow-hidden">
+                            <img src="${m.photo}" alt="${m.name}" class="w-full h-full object-cover grayscale contrast-105 hover:grayscale-0 transition-all duration-300">
+                        </a>
+
+                        <!-- Details Right -->
+                        <div class="flex-grow">
+                            <a href="/people/faculty-detail.html?id=${m.id}" class="block group">
+                                <h2 class="text-xl sm:text-2xl font-serif text-[#1b5368] group-hover:text-[#E0B24D] transition-colors leading-snug mb-1">
+                                    ${m.name}
+                                </h2>
+                            </a>
+                            <p class="text-sm text-gray-700 font-normal leading-snug mb-2">
+                                ${m.title}
+                            </p>
+                            <a href="${m.website}" target="_blank" class="text-xs text-[#b07d4b] hover:text-[#12264A] transition-colors font-medium">
+                                Personal Website
+                            </a>
+                        </div>
+                    </div>
+                `).join('');
+            }
+        });
+    </script>
 </body>
 </html>
