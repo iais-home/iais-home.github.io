@@ -27,6 +27,7 @@
     </style>
 </head>
 <body class="bg-[#FAFBFD] text-gray-800">
+    <!-- Header -->
     <div id="header-container"></div>
 
     <main class="flex-grow">
@@ -42,7 +43,7 @@
                         <p class="text-base md:text-lg text-gray-200 mb-8 max-w-2xl font-normal leading-relaxed">
                             Exploring the frontiers of safe, aligned, and general artificial intelligence. Join leading minds worldwide in Seoul this November.
                         </p>
-                        <a href="/news/news-template.html" class="inline-flex items-center justify-center bg-[#E0B24D] hover:bg-yellow-500 text-[#12264A] font-semibold py-3 px-8 transition-colors duration-200 w-fit text-sm">
+                        <a href="/news/activities-detail.html?id=fall-colloquium-2026" class="inline-flex items-center justify-center bg-[#E0B24D] hover:bg-yellow-500 text-[#12264A] font-semibold py-3 px-8 transition-colors duration-200 w-fit text-sm">
                             Learn More →
                         </a>
                     </div>
@@ -53,8 +54,8 @@
                         <span class="inline-block bg-blue-500 text-white text-xs font-bold px-3 py-1 mb-6 tracking-wider uppercase">Research Highlight</span>
                         <h2 class="text-3xl md:text-5xl font-serif font-bold leading-tight mb-6">Game Theoretic Analysis on Human-AI Interaction</h2>
                         <p class="text-base md:text-lg text-gray-200 mb-8 max-w-2xl font-normal leading-relaxed">Theory, framework and its neural evidence in the domain of cognitive control.</p>
-                        <a href="#" class="inline-flex items-center justify-center border border-white hover:bg-white hover:text-[#12264A] font-semibold py-3 px-8 transition-colors duration-200 w-fit text-sm">
-                            Read Paper
+                        <a href="/publications/journal.html" class="inline-flex items-center justify-center border border-white hover:bg-white hover:text-[#12264A] font-semibold py-3 px-8 transition-colors duration-200 w-fit text-sm">
+                            Read Papers →
                         </a>
                     </div>
                 </div>
@@ -64,7 +65,7 @@
                         <span class="inline-block bg-emerald-600 text-white text-xs font-bold px-3 py-1 mb-6 tracking-wider uppercase">Center Update</span>
                         <h2 class="text-3xl md:text-5xl font-serif font-bold leading-tight mb-6">One Source Multi-Disease Prediction</h2>
                         <p class="text-base md:text-lg text-gray-200 mb-8 max-w-2xl font-normal leading-relaxed">Virtual-Net-Based Micro Fundamental Model for Decoding Depression, Anxiety, and Suicidal Ideation from rPPG Dynamics in the wild.</p>
-                        <a href="#" class="inline-flex items-center justify-center bg-[#E0B24D] hover:bg-yellow-500 text-[#12264A] font-semibold py-3 px-8 transition-colors duration-200 w-fit text-sm">
+                        <a href="/centers/center-detail.html?id=medipharm-ai" class="inline-flex items-center justify-center bg-[#E0B24D] hover:bg-yellow-500 text-[#12264A] font-semibold py-3 px-8 transition-colors duration-200 w-fit text-sm">
                             Explore Center →
                         </a>
                     </div>
@@ -77,7 +78,7 @@
             </div>
         </section>
 
-        <!-- 1. News Section -->
+        <!-- 1. News Section (news-data.js 연동) -->
         <section class="pt-16 pb-12 bg-white">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex justify-between items-end mb-8 border-b border-gray-200 pb-3">
@@ -92,75 +93,12 @@
                     </a>
                 </div>
                 
-                <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                    <!-- News Card 1 -->
-                    <div class="flex flex-col justify-between group">
-                        <div>
-                            <span class="text-[11px] font-bold tracking-wider text-gray-500 uppercase block mb-3">INSTITUTE NEWS</span>
-                            <a href="/news/news-template.html" class="block">
-                                <h3 class="text-[17px] font-serif font-bold text-[#114B74] group-hover:text-[#E0B24D] transition-colors leading-snug mb-3">
-                                    IAIS Officially Launches the Center for Neuro-Symbolic AI
-                                </h3>
-                            </a>
-                            <p class="text-sm text-gray-600 leading-relaxed line-clamp-3 font-normal">
-                                The new research center will focus on bridging the gap between deep learning and symbolic reasoning...
-                            </p>
-                        </div>
-                        <span class="text-xs text-gray-400 mt-4 block font-medium">Oct 21, 2026</span>
-                    </div>
-
-                    <!-- News Card 2 -->
-                    <div class="flex flex-col justify-between group">
-                        <div>
-                            <span class="text-[11px] font-bold tracking-wider text-gray-500 uppercase block mb-3">AWARD</span>
-                            <a href="/news/news-template.html" class="block">
-                                <h3 class="text-[17px] font-serif font-bold text-[#114B74] group-hover:text-[#E0B24D] transition-colors leading-snug mb-3">
-                                    Dr. Elena Rostova Receives the Global AI Award
-                                </h3>
-                            </a>
-                            <p class="text-sm text-gray-600 leading-relaxed line-clamp-3 font-normal">
-                                Recognized for her groundbreaking contributions to energy-efficient large-scale architectures...
-                            </p>
-                        </div>
-                        <span class="text-xs text-gray-400 mt-4 block font-medium">Oct 15, 2026</span>
-                    </div>
-
-                    <!-- News Card 3 -->
-                    <div class="flex flex-col justify-between group">
-                        <div>
-                            <span class="text-[11px] font-bold tracking-wider text-gray-500 uppercase block mb-3">RESEARCH HIGHLIGHTS</span>
-                            <a href="/news/news-template.html" class="block">
-                                <h3 class="text-[17px] font-serif font-bold text-[#114B74] group-hover:text-[#E0B24D] transition-colors leading-snug mb-3">
-                                    Breakthrough in Few-Shot Learning Framework
-                                </h3>
-                            </a>
-                            <p class="text-sm text-gray-600 leading-relaxed line-clamp-3 font-normal">
-                                A collaborative study by IAIS researchers proposes a novel meta-learning approach that...
-                            </p>
-                        </div>
-                        <span class="text-xs text-gray-400 mt-4 block font-medium">Oct 02, 2026</span>
-                    </div>
-
-                    <!-- News Card 4 -->
-                    <div class="flex flex-col justify-between group">
-                        <div>
-                            <span class="text-[11px] font-bold tracking-wider text-gray-500 uppercase block mb-3">ANNOUNCEMENT</span>
-                            <a href="/news/news-template.html" class="block">
-                                <h3 class="text-[17px] font-serif font-bold text-[#114B74] group-hover:text-[#E0B24D] transition-colors leading-snug mb-3">
-                                    Call for Papers: Special Issue on Quantum Intelligence
-                                </h3>
-                            </a>
-                            <p class="text-sm text-gray-600 leading-relaxed line-clamp-3 font-normal">
-                                The IAIS Journal of Advanced Intelligence invites submissions for the upcoming special issue...
-                            </p>
-                        </div>
-                        <span class="text-xs text-gray-400 mt-4 block font-medium">Sep 28, 2026</span>
-                    </div>
-                </div>
+                <!-- 동적으로 채워지는 4개 카드 영역 -->
+                <div id="home-news-grid" class="grid grid-cols-1 md:grid-cols-4 gap-8"></div>
             </div>
         </section>
 
-        <!-- 2. Research Section -->
+        <!-- 2. Research Section (4대 Centers 연결) -->
         <section class="pt-8 pb-16 bg-white">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex justify-between items-end mb-8 border-b border-gray-200 pb-3">
@@ -170,43 +108,46 @@
                             <span class="block h-[3px] w-12 bg-[#E0B24D] mt-2"></span>
                         </h2>
                     </div>
-                    <a href="#" class="text-xs font-bold tracking-wider text-[#114B74] hover:text-[#E0B24D] transition-colors flex items-center gap-1">
+                    <a href="/centers/centers.html" class="text-xs font-bold tracking-wider text-[#114B74] hover:text-[#E0B24D] transition-colors flex items-center gap-1">
                         ALL RESEARCH <span class="text-base leading-none font-bold">+</span>
                     </a>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <a href="#" class="group relative bg-[#12264A] h-52 flex flex-col items-center justify-center p-6 text-center shadow-sm hover:shadow-lg transition-all transform hover:-translate-y-1">
+                    <!-- Center 1: Dark Navy -->
+                    <a href="/centers/center-detail.html?id=neuro-ai" class="group relative bg-[#12264A] h-52 flex flex-col items-center justify-center p-6 text-center shadow-sm hover:shadow-lg transition-all transform hover:-translate-y-1">
                         <h3 class="text-2xl font-serif font-bold text-white group-hover:text-[#E0B24D] transition-colors">
                             Cognitive Architecture
                         </h3>
                         <p class="text-xs text-gray-300 mt-3 font-light max-w-xs">
-                            Modeling biological brain networks and prefrontal meta-control for adaptive agents
+                            Neuroscience-Inspired AI: Biological neural circuits and prefrontal meta-control
                         </p>
                     </a>
 
-                    <a href="#" class="group relative bg-[#114B74] h-52 flex flex-col items-center justify-center p-6 text-center shadow-sm hover:shadow-lg transition-all transform hover:-translate-y-1">
+                    <!-- Center 2: Slate Blue -->
+                    <a href="/centers/center-detail.html?id=comp-law" class="group relative bg-[#114B74] h-52 flex flex-col items-center justify-center p-6 text-center shadow-sm hover:shadow-lg transition-all transform hover:-translate-y-1">
                         <h3 class="text-2xl font-serif font-bold text-white group-hover:text-[#E0B24D] transition-colors">
-                            AI Alignment
+                            AI Alignment & Law
                         </h3>
                         <p class="text-xs text-blue-100 mt-3 font-light max-w-xs">
-                            Formal verification and neuro-symbolic logic guarantees for safe intelligence
+                            Computational Law: Formal deontic logic and neuro-symbolic verification
                         </p>
                     </a>
 
-                    <a href="#" class="group relative bg-[#DCA642] h-52 flex flex-col items-center justify-center p-6 text-center shadow-sm hover:shadow-lg transition-all transform hover:-translate-y-1">
+                    <!-- Center 3: Gold / Ochre -->
+                    <a href="/centers/center-detail.html?id=medipharm-ai" class="group relative bg-[#DCA642] h-52 flex flex-col items-center justify-center p-6 text-center shadow-sm hover:shadow-lg transition-all transform hover:-translate-y-1">
                         <h3 class="text-2xl font-serif font-bold text-[#12264A] group-hover:text-black transition-colors">
-                            Embodied AI
+                            Digital Phenomics
                         </h3>
                         <p class="text-xs text-[#12264A]/80 mt-3 font-medium max-w-xs">
-                            In-the-wild physical and clinical interactions grounded in sensorimotor feedback
+                            Medicine & Pharma AI: Virtual-net micro fundamental models for physiological signals
                         </p>
                     </a>
                 </div>
             </div>
         </section>
 
-        <!-- 3. Activities Section -->
+        <!-- 3. Activities Section (activities.js 연동) -->
         <section class="py-16 bg-[#F4F6F9] border-t border-gray-200">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex justify-between items-end mb-8 border-b border-gray-300 pb-3">
@@ -216,58 +157,26 @@
                             <span class="block h-[3px] w-12 bg-[#E0B24D] mt-2"></span>
                         </h2>
                     </div>
-                    <a href="#" class="text-xs font-bold tracking-wider text-[#114B74] hover:text-[#E0B24D] transition-colors flex items-center gap-1">
+                    <a href="/news/activities.html" class="text-xs font-bold tracking-wider text-[#114B74] hover:text-[#E0B24D] transition-colors flex items-center gap-1">
                         ALL ACTIVITIES <span class="text-base leading-none font-bold">+</span>
                     </a>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div class="bg-white p-6 shadow-sm border border-gray-100 flex flex-col justify-between">
-                        <div>
-                            <span class="inline-block bg-[#114B74] text-white text-[10px] font-bold px-2 py-0.5 mb-3 tracking-wider">COLLOQUIUM</span>
-                            <h3 class="text-lg font-serif font-bold text-[#12264A] mb-2 leading-snug hover:text-[#114B74] cursor-pointer">
-                                2026 Fall Colloquium: Challenging Mathematical Problems in AI
-                            </h3>
-                            <p class="text-sm text-gray-600 mb-4 font-normal">HCMC Seminar Room, Soorim Bldg.</p>
-                        </div>
-                        <div class="text-xs text-gray-500 font-medium pt-3 border-t border-gray-100">
-                            Nov 12, 2026 (Thu)
-                        </div>
-                    </div>
-
-                    <div class="bg-white p-6 shadow-sm border border-gray-100 flex flex-col justify-between">
-                        <div>
-                            <span class="inline-block bg-[#12264A] text-white text-[10px] font-bold px-2 py-0.5 mb-3 tracking-wider">PUBLIC LECTURE</span>
-                            <h3 class="text-lg font-serif font-bold text-[#12264A] mb-2 leading-snug hover:text-[#114B74] cursor-pointer">
-                                From Neurons to Norms: Neuro-Symbolic AI in Law and Ethics
-                            </h3>
-                            <p class="text-sm text-gray-600 mb-4 font-normal">Auditorium & Virtual Stream</p>
-                        </div>
-                        <div class="text-xs text-gray-500 font-medium pt-3 border-t border-gray-100">
-                            Nov 19, 2026 (Thu)
-                        </div>
-                    </div>
-
-                    <div class="bg-white p-6 shadow-sm border border-gray-100 flex flex-col justify-between">
-                        <div>
-                            <span class="inline-block bg-[#E0B24D] text-[#12264A] text-[10px] font-bold px-2 py-0.5 mb-3 tracking-wider">SEMINAR</span>
-                            <h3 class="text-lg font-serif font-bold text-[#12264A] mb-2 leading-snug hover:text-[#114B74] cursor-pointer">
-                                Decoding Latent Autonomic States with Micro Fundamental Models
-                            </h3>
-                            <p class="text-sm text-gray-600 mb-4 font-normal">IAIS Main Conference Hall</p>
-                        </div>
-                        <div class="text-xs text-gray-500 font-medium pt-3 border-t border-gray-100">
-                            Dec 03, 2026 (Thu)
-                        </div>
-                    </div>
-                </div>
+                <!-- 동적으로 채워지는 3개 행사 영역 -->
+                <div id="home-activities-grid" class="grid grid-cols-1 md:grid-cols-3 gap-6"></div>
             </div>
         </section>
     </main>
 
+    <!-- Footer -->
     <div id="footer-container"></div>
 
+    <!-- 데이터 파일 로드 -->
+    <script src="/news/news-data.js"></script>
+    <script src="/news/activities.js"></script>
+
     <script>
+        // 1. 공통 헤더/푸터 로드
         async function loadComponents() {
             try {
                 const headerRes = await fetch('/header.html');
@@ -280,6 +189,55 @@
             }
         }
 
+        // 2. 메인 화면 News 섹션 자동 렌더링 (최신 4개)
+        function renderHomeNews() {
+            const container = document.getElementById('home-news-grid');
+            if (!container || typeof NEWS_DATA === 'undefined') return;
+
+            const latestFour = NEWS_DATA.slice(0, 4);
+            container.innerHTML = latestFour.map(item => `
+                <div class="flex flex-col justify-between group">
+                    <div>
+                        <span class="text-[11px] font-bold tracking-wider text-gray-500 uppercase block mb-3">${item.category}</span>
+                        <a href="/news/news-detail.html?id=${item.id}" class="block">
+                            <h3 class="text-[17px] font-serif font-bold text-[#114B74] group-hover:text-[#E0B24D] transition-colors leading-snug mb-3">
+                                ${item.title}
+                            </h3>
+                        </a>
+                        <p class="text-sm text-gray-600 leading-relaxed line-clamp-3 font-normal">${item.summary}</p>
+                    </div>
+                    <span class="text-xs text-gray-400 mt-4 block font-medium">${item.date}</span>
+                </div>
+            `).join('');
+        }
+
+        // 3. 메인 화면 Activities 섹션 자동 렌더링 (최신 3개)
+        function renderHomeActivities() {
+            const container = document.getElementById('home-activities-grid');
+            if (!container || typeof ACTIVITIES_DATA === 'undefined') return;
+
+            const latestThree = ACTIVITIES_DATA.slice(0, 3);
+            container.innerHTML = latestThree.map(item => `
+                <div class="bg-white p-6 shadow-sm border border-gray-100 flex flex-col justify-between rounded">
+                    <div>
+                        <span class="inline-block ${item.badgeColor} ${item.type === 'SEMINAR' ? 'text-[#12264A]' : 'text-white'} text-[10px] font-bold px-2 py-0.5 mb-3 tracking-wider rounded">
+                            ${item.type}
+                        </span>
+                        <a href="/news/activities-detail.html?id=${item.id}" class="block">
+                            <h3 class="text-lg font-serif font-bold text-[#12264A] mb-2 leading-snug hover:text-[#114B74] transition-colors">
+                                ${item.title}
+                            </h3>
+                        </a>
+                        <p class="text-xs text-gray-600 mb-4 font-normal line-clamp-2">${item.summary}</p>
+                    </div>
+                    <div class="text-xs text-gray-500 font-medium pt-3 border-t border-gray-100">
+                        ${item.date}
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // 4. 슬라이더 로직
         let currentSlide = 0;
         const totalSlides = 3;
         let slideInterval;
@@ -306,8 +264,11 @@
             slideInterval = setInterval(nextSlide, 5000);
         }
 
+        // 실행
         document.addEventListener("DOMContentLoaded", () => {
             loadComponents();
+            renderHomeNews();
+            renderHomeActivities();
             slideInterval = setInterval(nextSlide, 5000);
         });
     </script>
