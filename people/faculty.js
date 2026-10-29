@@ -3,14 +3,14 @@ const FACULTY_DATA = [
   {
     id: "jeehang-lee",
     name: "Jee-Hang Lee, Ph.D.",
-    title: "President, Reader \nAssistant Professor @ Sangmyung University, KR ",
-    subTitle: "Assistant Professor @ Sangmyung University, KR",
+    title: "President & Professor",
+    subTitle: "Professor @ Sangmyung University, KR",
     website: "https://iais.re.kr",
     photo: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80",
     photoCredit: "Courtesy of IAIS",
     bio: `
       <p class="mb-4">
-        Dr. Jee-Hang Lee is the President and Senior Fellow at the Institute for Advanced Intelligence Study (IAIS). 
+        Dr. Jee-Hang Lee is the President and Professor at the Institute for Advanced Intelligence Study (IAIS), and holds a professorship at Sangmyung University. 
         He completed his Ph.D. at the University of Bath (2015) and has established an international research trajectory spanning Computational Neuroscience, Reinforcement Learning Meta-Control, and Digital Phenomics.
       </p>
       <p class="mb-4">

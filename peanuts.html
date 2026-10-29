@@ -34,47 +34,10 @@
         <!-- Hero Slider Section -->
         <section class="slider-container relative bg-[#12264A] text-white overflow-hidden h-[420px] md:h-[500px]">
             <div class="slider-track h-full" id="sliderTrack">
-                <!-- Slide 1 -->
-                <div class="slide relative h-full flex flex-col justify-center px-8 md:px-24">
-                    <div class="absolute inset-0 bg-[#12264A] opacity-95 z-0"></div>
-                    <div class="relative z-10 max-w-4xl">
-                        <span class="inline-block bg-[#E0B24D] text-[#12264A] text-xs font-bold px-3 py-1 mb-6 tracking-wider uppercase">Featured Event</span>
-                        <h2 class="text-3xl md:text-5xl lg:text-6xl font-serif font-bold leading-tight mb-6">2026 IAIS International<br>Symposium on AGI Foundations</h2>
-                        <p class="text-base md:text-lg text-gray-200 mb-8 max-w-2xl font-normal leading-relaxed">
-                            Exploring the frontiers of safe, aligned, and general artificial intelligence. Join leading minds worldwide in Seoul this November.
-                        </p>
-                        <a href="/news/activities-detail.html?id=fall-colloquium-2026" class="inline-flex items-center justify-center bg-[#E0B24D] hover:bg-yellow-500 text-[#12264A] font-semibold py-3 px-8 transition-colors duration-200 w-fit text-sm">
-                            Learn More →
-                        </a>
-                    </div>
-                </div>
-                <!-- Slide 2 -->
-                <div class="slide relative h-full flex flex-col justify-center px-8 md:px-24 bg-[#114B74]">
-                    <div class="relative z-10 max-w-4xl">
-                        <span class="inline-block bg-blue-500 text-white text-xs font-bold px-3 py-1 mb-6 tracking-wider uppercase">Research Highlight</span>
-                        <h2 class="text-3xl md:text-5xl font-serif font-bold leading-tight mb-6">Game Theoretic Analysis on Human-AI Interaction</h2>
-                        <p class="text-base md:text-lg text-gray-200 mb-8 max-w-2xl font-normal leading-relaxed">Theory, framework and its neural evidence in the domain of cognitive control.</p>
-                        <a href="/publications/journal.html" class="inline-flex items-center justify-center border border-white hover:bg-white hover:text-[#12264A] font-semibold py-3 px-8 transition-colors duration-200 w-fit text-sm">
-                            Read Papers →
-                        </a>
-                    </div>
-                </div>
-                <!-- Slide 3 -->
-                <div class="slide relative h-full flex flex-col justify-center px-8 md:px-24 bg-[#0a172c]">
-                    <div class="relative z-10 max-w-4xl">
-                        <span class="inline-block bg-emerald-600 text-white text-xs font-bold px-3 py-1 mb-6 tracking-wider uppercase">Center Update</span>
-                        <h2 class="text-3xl md:text-5xl font-serif font-bold leading-tight mb-6">One Source Multi-Disease Prediction</h2>
-                        <p class="text-base md:text-lg text-gray-200 mb-8 max-w-2xl font-normal leading-relaxed">Virtual-Net-Based Micro Fundamental Model for Decoding Depression, Anxiety, and Suicidal Ideation from rPPG Dynamics in the wild.</p>
-                        <a href="/centers/center-detail.html?id=medipharm-ai" class="inline-flex items-center justify-center bg-[#E0B24D] hover:bg-yellow-500 text-[#12264A] font-semibold py-3 px-8 transition-colors duration-200 w-fit text-sm">
-                            Explore Center →
-                        </a>
-                    </div>
-                </div>
+                <!-- Javascript will populate this -->
             </div>
             <div class="slider-dots" id="sliderDots">
-                <span class="dot active" onclick="goToSlide(0)"></span>
-                <span class="dot" onclick="goToSlide(1)"></span>
-                <span class="dot" onclick="goToSlide(2)"></span>
+                <!-- Javascript will populate this -->
             </div>
         </section>
 
@@ -171,6 +134,7 @@
     <div id="footer-container"></div>
 
     <!-- Data Scripts -->
+    <script src="/news/hero-slider.js"></script>
     <script src="/news/news-data.js"></script>
     <script src="/news/activities.js"></script>
 
@@ -236,9 +200,37 @@
             `).join('');
         }
 
-        // 4. 슬라이더 로직
+        // 4. 슬라이더 동적 렌더링
+        function renderHeroSlider() {
+            const track = document.getElementById('sliderTrack');
+            const dotsContainer = document.getElementById('sliderDots');
+            if (!track || typeof HERO_SLIDER_DATA === 'undefined') return;
+
+            track.innerHTML = HERO_SLIDER_DATA.map((slide, index) => `
+                <div class="slide relative h-full flex flex-col justify-center px-8 md:px-24 ${slide.bgColor}">
+                    ${index === 0 ? '<div class="absolute inset-0 bg-[#12264A] opacity-95 z-0"></div>' : ''}
+                    <div class="relative z-10 max-w-4xl">
+                        <span class="inline-block ${slide.badgeColor} text-xs font-bold px-3 py-1 mb-6 tracking-wider uppercase">${slide.badge}</span>
+                        <h2 class="text-3xl md:text-5xl lg:text-6xl font-serif font-bold leading-tight mb-6">${slide.title}</h2>
+                        <p class="text-base md:text-lg text-gray-200 mb-8 max-w-2xl font-normal leading-relaxed">${slide.description}</p>
+                        <a href="${slide.buttonLink}" class="inline-flex items-center justify-center font-semibold py-3 px-8 transition-colors duration-200 w-fit text-sm ${slide.buttonColor}">
+                            ${slide.buttonText}
+                        </a>
+                    </div>
+                </div>
+            `).join('');
+
+            dotsContainer.innerHTML = HERO_SLIDER_DATA.map((_, index) => `
+                <span class="dot ${index === 0 ? 'active' : ''}" onclick="goToSlide(${index})"></span>
+            `).join('');
+            
+            // 전역 변수 초기화 (슬라이더 개수 동기화)
+            totalSlides = HERO_SLIDER_DATA.length;
+        }
+
+        // 5. 슬라이더 동작 로직
         let currentSlide = 0;
-        const totalSlides = 3;
+        let totalSlides = 0;
         let slideInterval;
 
         function updateSlider() {
@@ -266,6 +258,7 @@
         // 실행
         document.addEventListener("DOMContentLoaded", () => {
             loadComponents();
+            renderHeroSlider();
             renderHomeNews();
             renderHomeActivities();
             slideInterval = setInterval(nextSlide, 5000);

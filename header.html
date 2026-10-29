@@ -25,11 +25,14 @@
         </span>
       </div>
       
-      <!-- Mobile Menu Button (Hamburger) -->
-      <div class="md:hidden flex items-center">
-        <button id="mobile-menu-btn" class="text-[#12264A] hover:text-[#E0B24D] focus:outline-none p-2">
+      <!-- Mobile Menu & Search Actions -->
+      <div class="md:hidden flex items-center gap-4">
+        <button class="text-[#12264A] hover:text-[#E0B24D] focus:outline-none p-1" aria-label="Search">
+          <svg class="w-5 h-5 stroke-[2.2]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+        </button>
+        <button id="mobile-menu-btn" class="text-[#12264A] hover:text-[#E0B24D] focus:outline-none p-1 mr-1">
           <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path id="mobile-menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
           </svg>
         </button>
       </div>
@@ -121,16 +124,16 @@
 <!-- Mobile Overlay Menu (Hidden by default) -->
 <div id="mobile-menu" class="fixed inset-0 z-[100] bg-[#12264A] text-white hidden flex-col">
   <!-- Mobile Menu Header -->
-  <div class="flex justify-between items-center h-24 px-4 sm:px-6 border-b border-gray-700/50">
+  <div class="flex justify-between items-center h-24 px-4 sm:px-6 border-b border-gray-700/50 bg-white">
     <div class="flex items-center gap-[12px]">
-      <div role="img" aria-label="IAIS" style="display: flex; font-family: 'Source Serif 4', serif; font-size: 30px; font-weight: 700; color: #FFFFFF; letter-spacing: 0.04em; line-height: 1">
+      <div role="img" aria-label="IAIS" style="display: flex; font-family: 'Source Serif 4', serif; font-size: 34px; font-weight: 700; color: #12264A; letter-spacing: 0.04em; line-height: 1">
         <span>I</span>
         <span style="position: relative; display: inline-block">Λ<span style="position: absolute; top: 0.57em; left: 50%; margin-left: -0.0625em; width: 0.125em; height: 0.125em; border-radius: 50%; background: #E0B24D"></span></span>
         <span>I</span>
         <span>S</span>
       </div>
     </div>
-    <button id="mobile-close-btn" class="text-white hover:text-[#E0B24D] focus:outline-none p-2">
+    <button id="mobile-close-btn" class="text-[#12264A] hover:text-[#E0B24D] focus:outline-none p-2 mr-1">
       <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
       </svg>
@@ -138,7 +141,7 @@
   </div>
   
   <!-- Mobile Menu Links -->
-  <div class="flex-1 overflow-y-auto py-6 px-4 font-sans">
+  <div class="flex-1 overflow-y-auto py-6 px-4 font-sans bg-[#12264A]">
     <!-- Search Bar Mobile -->
     <div class="mb-8 px-2">
        <div class="relative">
@@ -224,50 +227,45 @@
   const toggles = document.querySelectorAll('.mobile-menu-toggle');
 
   // Open Menu
-  menuBtn?.addEventListener('click', () => {
-    mobileMenu.classList.remove('hidden');
-    mobileMenu.classList.add('flex');
-    document.body.style.overflow = 'hidden'; // Prevent scrolling underneath
-  });
+  if (menuBtn && mobileMenu) {
+      menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.remove('hidden');
+        mobileMenu.classList.add('flex');
+        document.body.style.overflow = 'hidden'; // Prevent scrolling underneath
+      });
+  }
 
   // Close Menu
-  closeBtn?.addEventListener('click', () => {
-    mobileMenu.classList.add('hidden');
-    mobileMenu.classList.remove('flex');
-    document.body.style.overflow = '';
-  });
+  if (closeBtn && mobileMenu) {
+      closeBtn.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        mobileMenu.classList.remove('flex');
+        document.body.style.overflow = '';
+      });
+  }
 
   // Accordion Logic for Submenus
-  toggles.forEach(toggle => {
-    toggle.addEventListener('click', (e) => {
-      // Prevent the 'View All' link click from triggering accordion
-      if(e.target.tagName === 'A') return; 
-      
-      const targetId = toggle.getAttribute('data-target');
-      const targetList = document.getElementById(targetId);
-      const icon = toggle.querySelector('svg');
-      
-      // Close others (optional - currently lets multiple stay open)
-      /* 
-      document.querySelectorAll('[id^="m-"]').forEach(list => {
-        if(list.id !== targetId) {
-          list.classList.add('hidden');
-          list.classList.remove('flex');
-          list.previousElementSibling.querySelector('svg').classList.remove('rotate-180');
-        }
-      });
-      */
+  if (toggles) {
+      toggles.forEach(toggle => {
+        toggle.addEventListener('click', (e) => {
+          // Prevent the 'View All' link click from triggering accordion
+          if(e.target.tagName === 'A') return; 
+          
+          const targetId = toggle.getAttribute('data-target');
+          const targetList = document.getElementById(targetId);
+          const icon = toggle.querySelector('svg');
 
-      // Toggle current
-      if (targetList.classList.contains('hidden')) {
-        targetList.classList.remove('hidden');
-        targetList.classList.add('flex');
-        icon.classList.add('rotate-180');
-      } else {
-        targetList.classList.add('hidden');
-        targetList.classList.remove('flex');
-        icon.classList.remove('rotate-180');
-      }
-    });
-  });
+          // Toggle current
+          if (targetList.classList.contains('hidden')) {
+            targetList.classList.remove('hidden');
+            targetList.classList.add('flex');
+            icon.classList.add('rotate-180');
+          } else {
+            targetList.classList.add('hidden');
+            targetList.classList.remove('flex');
+            icon.classList.remove('rotate-180');
+          }
+        });
+      });
+  }
 </script>
