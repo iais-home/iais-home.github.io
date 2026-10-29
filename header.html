@@ -1,5 +1,5 @@
 <!-- header.html -->
-<div class="bg-white border-b border-gray-100">
+<div class="bg-white border-b border-gray-100 relative z-50">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex justify-between items-center h-24">
       <!-- Logo -->
@@ -12,27 +12,36 @@
             <span>S</span>
           </div>
           <div style="width: 1.5px; height: 32px; background: #12264A"></div>
-          <div style="display: flex; flex-direction: column; gap: 4px; font-family: 'Public Sans', sans-serif; font-size: 8.5px; font-weight: 600; color: #12264A; letter-spacing: 0.14em; line-height: 1">
+          <div class="flex flex-col gap-1 font-sans text-[10px] font-bold text-[#12264A] tracking-wider leading-tight">
             <span>INSTITUTE FOR ADVANCED</span>
             <span>INTELLIGENCE STUDY</span>
           </div>
         </a>
       </div>
-      <!-- Slogan -->
+      <!-- Slogan (Hidden on Mobile) -->
       <div class="hidden md:block">
         <span class="font-sans text-sm md:text-base font-semibold text-[#12264A] tracking-wide">
           Probing Intelligence to Advance Intelligence
         </span>
       </div>
+      
+      <!-- Mobile Menu Button (Hamburger) -->
+      <div class="md:hidden flex items-center">
+        <button id="mobile-menu-btn" class="text-[#12264A] hover:text-[#E0B24D] focus:outline-none p-2">
+          <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path id="mobile-menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
     </div>
   </div>
 </div>
 
-<!-- Global Navigation Bar -->
-<nav class="bg-[#114B74] text-white relative z-50 shadow-md">
+<!-- Desktop Global Navigation Bar -->
+<nav class="hidden md:block bg-[#114B74] text-white relative z-40 shadow-md">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex justify-between h-14">
-      <div class="hidden md:flex space-x-8 items-center text-[15px] font-medium tracking-normal">
+      <div class="flex space-x-8 items-center text-[15px] font-medium tracking-normal h-full">
         
         <!-- 1. About IAIS -->
         <div class="relative group h-full flex items-center">
@@ -99,8 +108,8 @@
         </div>
       </div>
       
-      <!-- Search Icon -->
-      <div class="flex items-center space-x-4 ml-auto">
+      <!-- Search Icon (Desktop) -->
+      <div class="flex items-center space-x-4 ml-auto h-full">
         <button class="text-white hover:text-gray-200 transition-colors focus:outline-none p-1" aria-label="Search">
           <svg class="w-5 h-5 stroke-[2.2]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
         </button>
@@ -108,3 +117,157 @@
     </div>
   </div>
 </nav>
+
+<!-- Mobile Overlay Menu (Hidden by default) -->
+<div id="mobile-menu" class="fixed inset-0 z-[100] bg-[#12264A] text-white hidden flex-col">
+  <!-- Mobile Menu Header -->
+  <div class="flex justify-between items-center h-24 px-4 sm:px-6 border-b border-gray-700/50">
+    <div class="flex items-center gap-[12px]">
+      <div role="img" aria-label="IAIS" style="display: flex; font-family: 'Source Serif 4', serif; font-size: 30px; font-weight: 700; color: #FFFFFF; letter-spacing: 0.04em; line-height: 1">
+        <span>I</span>
+        <span style="position: relative; display: inline-block">Λ<span style="position: absolute; top: 0.57em; left: 50%; margin-left: -0.0625em; width: 0.125em; height: 0.125em; border-radius: 50%; background: #E0B24D"></span></span>
+        <span>I</span>
+        <span>S</span>
+      </div>
+    </div>
+    <button id="mobile-close-btn" class="text-white hover:text-[#E0B24D] focus:outline-none p-2">
+      <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+      </svg>
+    </button>
+  </div>
+  
+  <!-- Mobile Menu Links -->
+  <div class="flex-1 overflow-y-auto py-6 px-4 font-sans">
+    <!-- Search Bar Mobile -->
+    <div class="mb-8 px-2">
+       <div class="relative">
+         <input type="text" placeholder="Search..." class="w-full bg-[#114B74] border border-gray-600 text-white px-4 py-3 rounded focus:outline-none focus:border-[#E0B24D] placeholder-gray-400">
+         <svg class="w-5 h-5 absolute right-3 top-3.5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+       </div>
+    </div>
+
+    <ul class="space-y-2">
+      <!-- 1. About IAIS Mobile -->
+      <li>
+        <button class="mobile-menu-toggle flex justify-between items-center w-full px-2 py-4 text-left text-lg font-semibold tracking-wide border-b border-gray-700/50 hover:text-[#E0B24D] transition-colors" data-target="m-about">
+          About IAIS
+          <svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+        </button>
+        <ul id="m-about" class="hidden flex-col space-y-3 px-6 py-4 bg-[#0d1d3a] rounded-b">
+          <li><a href="/about/mission.html" class="block text-gray-300 hover:text-white">Mission and History</a></li>
+          <li><a href="/about/organisation.html" class="block text-gray-300 hover:text-white">Organisation</a></li>
+          <li><a href="/about/collaborators.html" class="block text-gray-300 hover:text-white">Collaborators</a></li>
+        </ul>
+      </li>
+
+      <!-- 2. People Mobile -->
+      <li>
+        <button class="mobile-menu-toggle flex justify-between items-center w-full px-2 py-4 text-left text-lg font-semibold tracking-wide border-b border-gray-700/50 hover:text-[#E0B24D] transition-colors" data-target="m-people">
+          People
+          <svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+        </button>
+        <ul id="m-people" class="hidden flex-col space-y-3 px-6 py-4 bg-[#0d1d3a] rounded-b">
+          <li><a href="/people/faculty.html" class="block text-gray-300 hover:text-white">Faculty</a></li>
+          <li><a href="/people/staff.html" class="block text-gray-300 hover:text-white">Research Staff</a></li>
+          <li><a href="/people/board.html" class="block text-gray-300 hover:text-white">Advisory Board</a></li>
+        </ul>
+      </li>
+
+      <!-- 3. Centers Mobile -->
+      <li>
+        <button class="mobile-menu-toggle flex justify-between items-center w-full px-2 py-4 text-left text-lg font-semibold tracking-wide border-b border-gray-700/50 hover:text-[#E0B24D] transition-colors" data-target="m-centers">
+          Centers
+          <a href="/centers/centers.html" class="text-sm font-normal text-gray-400 hover:text-white mr-4">View All</a>
+          <svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+        </button>
+        <ul id="m-centers" class="hidden flex-col space-y-3 px-6 py-4 bg-[#0d1d3a] rounded-b">
+          <li><a href="/centers/center-detail.html?id=neuro-ai" class="block text-gray-300 hover:text-white">Neuroscience-Inspired AI</a></li>
+          <li><a href="/centers/center-detail.html?id=comp-law" class="block text-gray-300 hover:text-white">Computational Law</a></li>
+          <li><a href="/centers/center-detail.html?id=medipharm-ai" class="block text-gray-300 hover:text-white">Medicine & Pharma AI</a></li>
+          <li><a href="/centers/center-detail.html?id=psychology-ai" class="block text-gray-300 hover:text-white">AI Psychology</a></li>
+        </ul>
+      </li>
+
+      <!-- 4. Publications Mobile -->
+      <li>
+        <button class="mobile-menu-toggle flex justify-between items-center w-full px-2 py-4 text-left text-lg font-semibold tracking-wide border-b border-gray-700/50 hover:text-[#E0B24D] transition-colors" data-target="m-pubs">
+          Publications
+          <svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+        </button>
+        <ul id="m-pubs" class="hidden flex-col space-y-3 px-6 py-4 bg-[#0d1d3a] rounded-b">
+          <li><a href="/publications/journal.html" class="block text-gray-300 hover:text-white">Research Papers</a></li>
+          <li><a href="/publications/conf.html" class="block text-gray-300 hover:text-white">Conference Posters</a></li>
+        </ul>
+      </li>
+
+      <!-- 5. News Mobile -->
+      <li>
+        <button class="mobile-menu-toggle flex justify-between items-center w-full px-2 py-4 text-left text-lg font-semibold tracking-wide border-b border-gray-700/50 hover:text-[#E0B24D] transition-colors" data-target="m-news">
+          News
+          <svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+        </button>
+        <ul id="m-news" class="hidden flex-col space-y-3 px-6 py-4 bg-[#0d1d3a] rounded-b">
+          <li><a href="/news/whats-new.html" class="block text-gray-300 hover:text-white">What's New</a></li>
+          <li><a href="/news/activities.html" class="block text-gray-300 hover:text-white">Activities</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<script>
+  // Mobile Menu Interaction Logic
+  const menuBtn = document.getElementById('mobile-menu-btn');
+  const closeBtn = document.getElementById('mobile-close-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const toggles = document.querySelectorAll('.mobile-menu-toggle');
+
+  // Open Menu
+  menuBtn?.addEventListener('click', () => {
+    mobileMenu.classList.remove('hidden');
+    mobileMenu.classList.add('flex');
+    document.body.style.overflow = 'hidden'; // Prevent scrolling underneath
+  });
+
+  // Close Menu
+  closeBtn?.addEventListener('click', () => {
+    mobileMenu.classList.add('hidden');
+    mobileMenu.classList.remove('flex');
+    document.body.style.overflow = '';
+  });
+
+  // Accordion Logic for Submenus
+  toggles.forEach(toggle => {
+    toggle.addEventListener('click', (e) => {
+      // Prevent the 'View All' link click from triggering accordion
+      if(e.target.tagName === 'A') return; 
+      
+      const targetId = toggle.getAttribute('data-target');
+      const targetList = document.getElementById(targetId);
+      const icon = toggle.querySelector('svg');
+      
+      // Close others (optional - currently lets multiple stay open)
+      /* 
+      document.querySelectorAll('[id^="m-"]').forEach(list => {
+        if(list.id !== targetId) {
+          list.classList.add('hidden');
+          list.classList.remove('flex');
+          list.previousElementSibling.querySelector('svg').classList.remove('rotate-180');
+        }
+      });
+      */
+
+      // Toggle current
+      if (targetList.classList.contains('hidden')) {
+        targetList.classList.remove('hidden');
+        targetList.classList.add('flex');
+        icon.classList.add('rotate-180');
+      } else {
+        targetList.classList.add('hidden');
+        targetList.classList.remove('flex');
+        icon.classList.remove('rotate-180');
+      }
+    });
+  });
+</script>
