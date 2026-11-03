@@ -40,3 +40,53 @@ async function loadComponents() {
 }
 
 document.addEventListener("DOMContentLoaded", loadComponents);
+
+// Mobile Menu Delegation Logic
+document.addEventListener('click', function(e) {
+    // Open Menu
+    const menuBtn = e.target.closest('#mobile-menu-btn');
+    if (menuBtn) {
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (mobileMenu) {
+            mobileMenu.classList.remove('hidden');
+            mobileMenu.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        }
+        return;
+    }
+
+    // Close Menu
+    const closeBtn = e.target.closest('#mobile-close-btn');
+    if (closeBtn) {
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (mobileMenu) {
+            mobileMenu.classList.add('hidden');
+            mobileMenu.classList.remove('flex');
+            document.body.style.overflow = '';
+        }
+        return;
+    }
+
+    // Accordion Logic
+    const toggleBtn = e.target.closest('.mobile-menu-toggle');
+    if (toggleBtn) {
+        // Prevent if clicking View All link inside the button
+        if(e.target.tagName === 'A') return;
+        
+        const targetId = toggleBtn.getAttribute('data-target');
+        const targetList = document.getElementById(targetId);
+        const icon = toggleBtn.querySelector('svg');
+        
+        if (targetList) {
+            if (targetList.classList.contains('hidden')) {
+                targetList.classList.remove('hidden');
+                targetList.classList.add('flex');
+                if (icon) icon.classList.add('rotate-180');
+            } else {
+                targetList.classList.add('hidden');
+                targetList.classList.remove('flex');
+                if (icon) icon.classList.remove('rotate-180');
+            }
+        }
+    }
+});
