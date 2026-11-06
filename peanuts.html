@@ -77,33 +77,8 @@
                     </a>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <a href="/centers/center-detail.html?id=neuro-ai" class="group relative bg-[#12264A] h-52 flex flex-col items-center justify-center p-6 text-center shadow-sm hover:shadow-lg transition-all transform hover:-translate-y-1">
-                        <h3 class="text-2xl font-serif font-bold text-white group-hover:text-[#E0B24D] transition-colors">
-                            Neuroscience-Inspired AI
-                        </h3>
-                        <p class="text-xs text-gray-300 mt-3 font-light max-w-xs">
-                            Modeling biological brain networks and prefrontal meta-control for adaptive agents
-                        </p>
-                    </a>
-
-                    <a href="/centers/center-detail.html?id=comp-law" class="group relative bg-[#114B74] h-52 flex flex-col items-center justify-center p-6 text-center shadow-sm hover:shadow-lg transition-all transform hover:-translate-y-1">
-                        <h3 class="text-2xl font-serif font-bold text-white group-hover:text-[#E0B24D] transition-colors">
-                            Computational Law
-                        </h3>
-                        <p class="text-xs text-blue-100 mt-3 font-light max-w-xs">
-                            Formal verification and neuro-symbolic logic guarantees for safe intelligence
-                        </p>
-                    </a>
-
-                    <a href="/centers/center-detail.html?id=medipharm-ai" class="group relative bg-[#DCA642] h-52 flex flex-col items-center justify-center p-6 text-center shadow-sm hover:shadow-lg transition-all transform hover:-translate-y-1">
-                        <h3 class="text-2xl font-serif font-bold text-[#12264A] group-hover:text-black transition-colors">
-                            Medicine & Pharma AI
-                        </h3>
-                        <p class="text-xs text-[#12264A]/80 mt-3 font-medium max-w-xs">
-                            In-the-wild physical and clinical interactions grounded in sensorimotor feedback
-                        </p>
-                    </a>
+                <div id="home-centers-grid" class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                    <!-- Javascript will populate this -->
                 </div>
             </div>
         </section>
@@ -134,6 +109,7 @@
     <div id="footer-container"></div>
 
     <!-- Data Scripts -->
+    <script src="/centers/centers.js"></script>
     <script src="/news/hero-slider.js"></script>
     <script src="/news/news-data.js"></script>
     <script src="/news/activities.js"></script>
@@ -171,6 +147,30 @@
                     </div>
                     <span class="text-xs text-gray-400 mt-4 block font-medium">${item.date}</span>
                 </div>
+            `).join('');
+        }
+
+        
+        // 메인 화면 Centers 섹션 자동 렌더링
+        function renderHomeCenters() {
+            const container = document.getElementById('home-centers-grid');
+            if (!container || typeof CENTERS_DATA === 'undefined') return;
+
+            // Define background colors for the 4 centers
+            const bgColors = ["bg-[#12264A]", "bg-[#114B74]", "bg-[#3B4558]", "bg-[#DCA642]"];
+            const textColors = ["text-white", "text-white", "text-white", "text-[#12264A]"];
+            const hoverColors = ["group-hover:text-[#E0B24D]", "group-hover:text-[#E0B24D]", "group-hover:text-[#E0B24D]", "group-hover:text-black"];
+            const pColors = ["text-gray-300", "text-blue-100", "text-gray-300", "text-[#12264A]/80"];
+
+            container.innerHTML = CENTERS_DATA.slice(0, 4).map((c, i) => `
+                <a href="/centers/center-detail.html?id=${c.id}" class="group relative ${bgColors[i]} h-52 flex flex-col items-center justify-center p-6 text-center shadow-sm hover:shadow-lg transition-all transform hover:-translate-y-1">
+                    <h3 class="text-2xl font-serif font-bold ${textColors[i]} ${hoverColors[i]} transition-colors leading-tight">
+                        ${c.shortName}
+                    </h3>
+                    <p class="text-xs ${pColors[i]} mt-3 font-medium max-w-xs leading-relaxed">
+                        ${c.slogan}
+                    </p>
+                </a>
             `).join('');
         }
 

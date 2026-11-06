@@ -1,15 +1,15 @@
 // centers/centers.js
 const CENTERS_DATA = [
   {
-    id: "neuro-ai",
-    name: "Center for Neuroscience-Inspired AI",
-    shortName: "Neuro AI",
+    id: "comp-brain-ai",
+    name: "Center for Computational Brain & AI",
+    shortName: "Brain & AI",
     badge: "FOUNDATIONAL AI",
     slogan: "Unifying Prefrontal Meta-Control with Adaptive Deep Reinforcement Learning",
     summary: "Reverse-engineers mammalian cognitive control to architect resource-rational artificial agents capable of rapid zero-shot adaptation in dynamic, non-stationary environments.",
     description: `
       <p class="text-xl text-gray-800 font-serif leading-relaxed mb-6">
-        The <strong>Center for Neuroscience-Inspired AI</strong> investigates the foundational computational architectures of the biological brain, translating mammalian prefrontal dynamics into robust, energy-efficient machine intelligence.
+        The <strong>Center for Computational Brain & AI</strong> investigates the foundational computational architectures of the biological brain, translating mammalian prefrontal dynamics into robust, energy-efficient machine intelligence.
       </p>
       <p class="mb-6">
         Contemporary deep reinforcement learning systems excel in rigid, stationary task distributions but struggle with catastrophic forgetting and sample inefficiency when confronted with environmental shifts. Our center focuses on the dual-system hypothesis—synthesizing model-based deliberative inference with model-free habitual execution through a game-theoretic meta-controller.
@@ -21,7 +21,7 @@ const CENTERS_DATA = [
         <li><strong>In-Silico Task Design & Neural Verification:</strong> Validating computational models against fMRI/EEG trajectories collected during human-AI cooperative games.</li>
       </ul>
     `,
-    lead: "Dr. Jee-Hang Lee (Center Director)",
+    lead: "Dr. Jee-Hang Lee (President & Professor)",
     keyPapers: [
       "Control of the human inference process through in-silico task design (Cell Reports, 2024)",
       "Prefrontal Meta-Control Incorporating Mental Simulation (Frontiers in Computational Neuroscience, 2025)"
@@ -36,10 +36,10 @@ const CENTERS_DATA = [
     summary: "Bridges statutory jurisprudence and deep learning architectures through neuro-symbolic reasoning, guaranteeing provable safety boundaries against value drift and statutory hallucination.",
     description: `
       <p class="text-xl text-gray-800 font-serif leading-relaxed mb-6">
-        The <strong>Center for Computational Law (Lex AI)</strong> formalizes the intersection of jurisprudence, constitutional norms, and machine decision-making.
+        The <strong>Center for Computational Law</strong> formalizes the intersection of jurisprudence, constitutional norms, and machine decision-making.
       </p>
       <p class="mb-6">
-        As foundation models are increasingly deployed across legal analysis, regulatory enforcement, and civic adjudication, black-box probabilistic text generation poses acute constitutional risks. Lex AI establishes rigorous mathematical frameworks that bind empirical statistical generators within formally verifiable deontic logic rules.
+        As foundation models are increasingly deployed across legal analysis, regulatory enforcement, and civic adjudication, black-box probabilistic text generation poses acute constitutional risks. Our center establishes rigorous mathematical frameworks that bind empirical statistical generators within formally verifiable deontic logic rules.
       </p>
       <h3 class="text-2xl font-serif font-bold text-[#12264A] mt-8 mb-4">Core Research Initiatives</h3>
       <ul class="list-disc list-inside space-y-3 text-gray-700">
@@ -51,33 +51,6 @@ const CENTERS_DATA = [
     lead: "Lex AI Research Consortium & Affiliated Legal Scholars",
     keyPapers: [
       "From Neurons to Norms: Neuro-Symbolic Synthesis in Computational Jurisprudence (IAIS Working Paper, 2026)"
-    ]
-  },
-  {
-    id: "medipharm-ai",
-    name: "Center for Medicine & Pharma AI",
-    shortName: "Medi-Pharm AI",
-    badge: "CLINICAL TRANSLATION",
-    slogan: "Virtual-Net Micro Fundamental Models for Non-Contact Biomarker Extraction & Multi-Disease Decoding",
-    summary: "Develops in-silico physiological foundations to decode depression, generalized anxiety, and suicidal ideation from non-contact rPPG camera streams and multi-modal clinical timeseries.",
-    description: `
-      <p class="text-xl text-gray-800 font-serif leading-relaxed mb-6">
-        The <strong>Center for Medicine & Pharma AI</strong> translates mathematical physiological models into software-as-a-medical-device (SaMD) solutions and digital therapeutic benchmarks.
-      </p>
-      <p class="mb-6">
-        Rather than relying on uninterpretable end-to-end black boxes, our proprietary <em>Virtual-Net</em> framework reconstructs latent autonomic nervous system (ANS) dynamics directly from ambient video and wearable sensors. This enables robust, motion-tolerant multi-disease screening in unrestrained real-world environments.
-      </p>
-      <h3 class="text-2xl font-serif font-bold text-[#12264A] mt-8 mb-4">Core Research Initiatives</h3>
-      <ul class="list-disc list-inside space-y-3 text-gray-700">
-        <li><strong>One-Source Multi-Disease Predictor:</strong> Multi-task decoders for simultaneous tracking of depression, anxiety, and suicide risk from a unified arterial pulse stream.</li>
-        <li><strong>Non-Contact Hemodynamic Modeling:</strong> Advanced signal quality index (SQI) pipelines for filtering illumination and motion artifacts in the wild.</li>
-        <li><strong>Randomized Clinical Trials (RCT):</strong> Hospital-partnered cohort validation and digital biomarker extraction for clinical deployment.</li>
-      </ul>
-    `,
-    lead: "Dr. Jee-Hang Lee (Director) & Clinical Advisory Faculty",
-    keyPapers: [
-      "Anzeilax, a Smartphone-based Digital Therapeutic for Generalized Anxiety Disorder: A Randomized Controlled Trial (JMIR, 2025)",
-      "Enhancing Cognitive Functions of Older Adults With Software Robot: Longitudinal Field Study (JMIR mHealth, 2026)"
     ]
   },
   {
@@ -101,10 +74,37 @@ const CENTERS_DATA = [
         <li><strong>Agentic Self-Talk Mechanisms:</strong> Engineering conversational AI agents that guide patients through structured cognitive restructuring.</li>
       </ul>
     `,
-    lead: "Dr. Jee-Hang Lee (Center Director)",
+    lead: "Affiliated Faculty in Psychometrics & Cognitive Science",
     keyPapers: [
       "Talk to You More, Listen to You More: Utilizing Self-talk as a Mechanism of Action for Alleviating Anxiety (ACM CHI 2025)",
       "Response Time Dynamics From Noncognitive EMA as a Proxy for Geriatric Depression (JMIR Aging, 2026)"
+    ]
+  },
+  {
+    id: "medipharm-ai",
+    name: "Center for Medical & Pharmacological AI",
+    shortName: "Medi-Pharm AI",
+    badge: "CLINICAL TRANSLATION",
+    slogan: "Virtual-Net Micro Fundamental Models for Multi-Disease Decoding",
+    summary: "Develops in-silico physiological foundations to decode depression, generalized anxiety, and suicidal ideation from non-contact rPPG camera streams and multi-modal clinical timeseries.",
+    description: `
+      <p class="text-xl text-gray-800 font-serif leading-relaxed mb-6">
+        The <strong>Center for Medical & Pharmacological AI</strong> translates mathematical physiological models into software-as-a-medical-device (SaMD) solutions and digital therapeutic benchmarks.
+      </p>
+      <p class="mb-6">
+        Rather than relying on uninterpretable end-to-end black boxes, our proprietary <em>Virtual-Net</em> framework reconstructs latent autonomic nervous system (ANS) dynamics directly from ambient video and wearable sensors. This enables robust, motion-tolerant multi-disease screening in unrestrained real-world environments.
+      </p>
+      <h3 class="text-2xl font-serif font-bold text-[#12264A] mt-8 mb-4">Core Research Initiatives</h3>
+      <ul class="list-disc list-inside space-y-3 text-gray-700">
+        <li><strong>One-Source Multi-Disease Predictor:</strong> Multi-task decoders for simultaneous tracking of depression, anxiety, and suicide risk from a unified arterial pulse stream.</li>
+        <li><strong>Non-Contact Hemodynamic Modeling:</strong> Advanced signal quality index (SQI) pipelines for filtering illumination and motion artifacts in the wild.</li>
+        <li><strong>Randomized Clinical Trials (RCT):</strong> Hospital-partnered cohort validation and digital biomarker extraction for clinical deployment.</li>
+      </ul>
+    `,
+    lead: "Dr. Jee-Hang Lee (President & Professor) & Clinical Advisory Faculty",
+    keyPapers: [
+      "Anzeilax, a Smartphone-based Digital Therapeutic for Generalized Anxiety Disorder: A Randomized Controlled Trial (JMIR, 2025)",
+      "Enhancing Cognitive Functions of Older Adults With Software Robot: Longitudinal Field Study (JMIR mHealth, 2026)"
     ]
   }
 ];
