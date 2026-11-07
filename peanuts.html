@@ -117,18 +117,38 @@
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <a href="/about/mission.html" class="group relative bg-[#F4F6F9] h-32 flex flex-col items-center justify-center p-6 text-center border border-gray-200 shadow-sm hover:shadow-md hover:border-[#114B74] transition-all">
-                        <h3 class="text-xl font-serif font-bold text-[#12264A] group-hover:text-[#E0B24D] transition-colors">
-                            Mission and History
+                    <!-- Mission and History Card -->
+                    <a href="/about/mission.html" class="group relative h-64 flex flex-col items-center justify-center text-center overflow-hidden rounded shadow-sm hover:shadow-lg transition-all">
+                        <!-- Background Image -->
+                        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style="background-image: url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=800&q=80');"></div>
+                        <!-- Dark Overlay -->
+                        <div class="absolute inset-0 bg-[#12264A]/70 group-hover:bg-[#12264A]/50 transition-colors duration-300"></div>
+                        <!-- Content -->
+                        <h3 class="relative z-10 text-2xl font-serif font-bold text-white group-hover:text-[#E0B24D] transition-colors tracking-wide">
+                            Mission & History
                         </h3>
                     </a>
-                    <a href="/about/organisation.html" class="group relative bg-[#F4F6F9] h-32 flex flex-col items-center justify-center p-6 text-center border border-gray-200 shadow-sm hover:shadow-md hover:border-[#114B74] transition-all">
-                        <h3 class="text-xl font-serif font-bold text-[#12264A] group-hover:text-[#E0B24D] transition-colors">
+                    
+                    <!-- Organisation Card -->
+                    <a href="/about/organisation.html" class="group relative h-64 flex flex-col items-center justify-center text-center overflow-hidden rounded shadow-sm hover:shadow-lg transition-all">
+                        <!-- Background Image -->
+                        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style="background-image: url('https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=800&q=80');"></div>
+                        <!-- Dark Overlay -->
+                        <div class="absolute inset-0 bg-[#114B74]/70 group-hover:bg-[#114B74]/50 transition-colors duration-300"></div>
+                        <!-- Content -->
+                        <h3 class="relative z-10 text-2xl font-serif font-bold text-white group-hover:text-[#E0B24D] transition-colors tracking-wide">
                             Organisation
                         </h3>
                     </a>
-                    <a href="/about/collaborators.html" class="group relative bg-[#F4F6F9] h-32 flex flex-col items-center justify-center p-6 text-center border border-gray-200 shadow-sm hover:shadow-md hover:border-[#114B74] transition-all">
-                        <h3 class="text-xl font-serif font-bold text-[#12264A] group-hover:text-[#E0B24D] transition-colors">
+                    
+                    <!-- Collaborators Card -->
+                    <a href="/about/collaborators.html" class="group relative h-64 flex flex-col items-center justify-center text-center overflow-hidden rounded shadow-sm hover:shadow-lg transition-all">
+                        <!-- Background Image -->
+                        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style="background-image: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80');"></div>
+                        <!-- Dark Overlay -->
+                        <div class="absolute inset-0 bg-gray-900/70 group-hover:bg-gray-900/50 transition-colors duration-300"></div>
+                        <!-- Content -->
+                        <h3 class="relative z-10 text-2xl font-serif font-bold text-white group-hover:text-[#E0B24D] transition-colors tracking-wide">
                             Collaborators
                         </h3>
                     </a>
@@ -294,6 +314,7 @@
             renderHeroSlider();
             renderHomeNews();
             renderHomeActivities();
+            renderHomeCenters();
             slideInterval = setInterval(nextSlide, 5000);
         });
     
