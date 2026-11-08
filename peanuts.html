@@ -83,26 +83,7 @@
             </div>
         </section>
 
-        <!-- 3. Activities Section -->
-        <section class="py-16 bg-[#F4F6F9] border-t border-gray-200">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="flex justify-between items-end mb-8 border-b border-gray-300 pb-3">
-                    <div>
-                        <h2 class="text-3xl font-serif font-bold text-[#12264A] inline-block relative">
-                            Activities
-                            <span class="block h-[3px] w-12 bg-[#E0B24D] mt-2"></span>
-                        </h2>
-                    </div>
-                    <a href="/news/activities.html" class="text-xs font-bold tracking-wider text-[#114B74] hover:text-[#E0B24D] transition-colors flex items-center gap-1">
-                        ALL ACTIVITIES <span class="text-base leading-none font-bold">+</span>
-                    </a>
-                </div>
-
-                <div id="home-activities-grid" class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <!-- Javascript will populate this -->
-                </div>
-            </div>
-        </section>
+        
     
         <!-- 4. About IAIS Section -->
         <section class="py-16 bg-white border-t border-gray-200">
@@ -120,7 +101,7 @@
                     <!-- Mission and History Card -->
                     <a href="/about/mission.html" class="group relative h-64 flex flex-col items-center justify-center text-center overflow-hidden rounded shadow-sm hover:shadow-lg transition-all">
                         <!-- Background Image -->
-                        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style="background-image: url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=800&q=80');"></div>
+                        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style="background-image: url('https://images.unsplash.com/photo-1559757175-5700dde675bc?auto=format&fit=crop&w=800&q=80');"></div>
                         <!-- Dark Overlay -->
                         <div class="absolute inset-0 bg-[#12264A]/70 group-hover:bg-[#12264A]/50 transition-colors duration-300"></div>
                         <!-- Content -->
@@ -156,11 +137,34 @@
             </div>
         </section>
 
+    
+        <!-- 5. Job Openings Section -->
+        <section class="py-16 bg-[#F4F6F9] border-t border-gray-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-end mb-8 border-b border-gray-300 pb-3">
+                    <div>
+                        <h2 class="text-3xl font-serif font-bold text-[#12264A] inline-block relative">
+                            Job Openings
+                            <span class="block h-[3px] w-12 bg-[#E0B24D] mt-2"></span>
+                        </h2>
+                    </div>
+                </div>
+
+                <div id="home-jobs-list" class="space-y-4">
+                    <div class="bg-white p-6 md:p-8 shadow-sm border border-gray-100 text-center">
+                        <p class="text-gray-500 font-medium">No openings at the moment.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </main>
 
     <!-- Footer -->
     <div id="footer-container"></div>
 
+    <!-- Data Scripts -->
+    <script src="/publications/journal.js"></script>
     <!-- Data Scripts -->
     <script src="/centers/centers.js"></script>
     <script src="/news/hero-slider.js"></script>
@@ -227,33 +231,36 @@
             `).join('');
         }
 
-        // 3. 메인 화면 Activities 섹션 자동 렌더링
-        function renderHomeActivities() {
-            const container = document.getElementById('home-activities-grid');
-            if (!container || typeof ACTIVITIES_DATA === 'undefined') return;
+        
+        // 메인 화면 Research(Publications) 자동 렌더링
+        function renderHomeResearch() {
+            const container = document.getElementById('home-research-list');
+            if (!container || typeof JOURNAL_PAPERS === 'undefined') return;
 
-            const latestThree = ACTIVITIES_DATA.slice(0, 3);
-            container.innerHTML = latestThree.map(item => `
-                <div class="bg-white p-6 shadow-sm border border-gray-100 flex flex-col justify-between rounded">
-                    <div>
-                        <span class="inline-block ${item.badgeColor} ${item.type === 'SEMINAR' ? 'text-[#12264A]' : 'text-white'} text-[10px] font-bold px-2 py-0.5 mb-3 tracking-wider rounded">
-                            ${item.type}
-                        </span>
-                        <a href="/news/activities-detail.html?id=${item.id}" class="block">
-                            <h3 class="text-lg font-serif font-bold text-[#12264A] mb-2 leading-snug hover:text-[#114B74] transition-colors">
-                                ${item.title}
+            const latestThree = JOURNAL_PAPERS.slice(0, 3);
+            container.innerHTML = latestThree.map(p => `
+                <article class="bg-white p-6 shadow-sm border border-gray-100 hover:border-[#114B74] transition-all group flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+                    <div class="flex-grow">
+                        <div class="flex items-center gap-3 mb-2">
+                            <span class="bg-[#12264A] text-white text-[10px] font-bold px-2 py-0.5 uppercase tracking-wider rounded">${p.year}</span>
+                            <span class="text-xs text-[#114B74] font-semibold">${p.venue}</span>
+                        </div>
+                        <a href="/publications/journal-detail.html?id=${p.id}" class="block">
+                            <h3 class="text-lg md:text-xl font-serif font-bold text-[#12264A] group-hover:text-[#E0B24D] transition-colors leading-snug mb-1">
+                                ${p.title}
                             </h3>
                         </a>
-                        <p class="text-xs text-gray-600 mb-4 font-normal line-clamp-2">${item.summary}</p>
+                        <p class="text-xs text-gray-600 line-clamp-1">${p.authors}</p>
                     </div>
-                    <div class="text-xs text-gray-500 font-medium pt-3 border-t border-gray-100">
-                        ${item.date}
+                    <div class="flex-shrink-0 self-start md:self-center">
+                        <a href="/publications/journal-detail.html?id=${p.id}" class="inline-flex items-center text-xs font-bold text-[#114B74] group-hover:text-[#E0B24D] uppercase tracking-wider">
+                            View Details →
+                        </a>
                     </div>
-                </div>
+                </article>
             `).join('');
         }
-
-        // 4. 슬라이더 동적 렌더링
+// 4. 슬라이더 동적 렌더링
         function renderHeroSlider() {
             const track = document.getElementById('sliderTrack');
             const dotsContainer = document.getElementById('sliderDots');
