@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mission and History - IAIS</title>
+    <title>Collaborators - IAIS</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600;700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -18,39 +18,114 @@
         <!-- Top Navy Banner -->
         <section class="bg-[#12264A] text-white py-14 border-b border-gray-800">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <h1 class="text-4xl md:text-5xl font-serif font-bold tracking-tight text-white">Mission & History</h1>
+                <h1 class="text-4xl md:text-5xl font-serif font-bold tracking-tight text-white">Collaborators</h1>
                 <div class="w-16 h-1 bg-[#E0B24D] mx-auto mt-4"></div>
             </div>
         </section>
 
-        <!-- Mission Content -->
-        <article class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-            <div class="prose prose-lg max-w-none text-gray-700 leading-relaxed font-normal space-y-8">
-                <p class="text-xl text-gray-800 font-serif leading-relaxed font-medium">
-                    The Institute for Advanced Intelligence Study (IAIS) was founded to probe the deepest principles of natural and artificial intelligence, operating as an autonomous intellectual sanctuary free from short-term commercial demands.
-                </p>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <p class="text-xl text-gray-800 font-serif leading-relaxed font-medium max-w-4xl mb-12">
+                IAIS works with leading universities, hospitals, public institutions and companies in Korea and abroad. Together we turn fundamental research into shared knowledge.
+            </p>
 
-                <h2 class="text-2xl font-serif font-bold text-[#12264A] border-b border-gray-200 pb-2 mt-10">Our Mission</h2>
-                <p>
-                    IAIS bridges pure computational neuroscience with rigorous formal verification. Our core objective is to uncover how mammalian neural circuits execute meta-control and to synthesize these insights into verifiable, trustworthy artificial general intelligence.
-                </p>
-
-                <h2 class="text-2xl font-serif font-bold text-[#12264A] border-b border-gray-200 pb-2 mt-10">The Dual-Track Model</h2>
-                <p>
-                    Combining the pure academic ethos of the Santa Fe Institute (SFI) with the engineer-owned autonomy of Igalia, IAIS maintains two symbiotic tracks:
-                </p>
-                <ul class="list-disc list-inside space-y-2">
-                    <li><strong>Academic Track (Faculty & Fellows):</strong> Dedicated to mathematical modeling, biological hypothesis formulation, and publishing world-leading scholarship in venues such as Cell Reports, JMIR, and ACM CHI.</li>
-                    <li><strong>Engineering Track (Research Engineers):</strong> Dedicated to architecting resilient software infrastructure, low-latency biosignal processing pipelines, and in-the-wild digital therapeutic benchmarks.</li>
-                </ul>
+            <div id="collab-sections" class="space-y-14">
+                <!-- Javascript will populate this -->
             </div>
-        </article>
+        </div>
     </main>
 
     <div id="footer-container"></div>
 
     <script>
+        // To use an official logo, put the image in /assets/img/clients/ and set "logo" to its path.
+        // Entries without a logo show a monogram badge instead.
+        const COLLAB_GROUPS = [
+            {
+                title: "International Partners",
+                items: [
+                    { org: "Saarland University", country: "DE", person: "Prof. Daniel Strauss", url: "https://www.snnu.uni-saarland.de/", mono: "SU" },
+                    { org: "University of Oxford", country: "UK", person: "Dr. Ben Seymour", url: "https://www.ox.ac.uk/", mono: "OX" },
+                    { org: "Google DeepMind", country: "UK", person: "Dr. Joel Leibo", url: "https://deepmind.google/", mono: "GD" },
+                    { org: "Xiamen University of Technology", country: "CN", person: "Prof. Gang Ren", url: "", mono: "XMUT" }
+                ]
+            },
+            {
+                title: "Academic Partners in Korea",
+                items: [
+                    { org: "KAIST", country: "KR", person: "Prof. Sang Wan Lee", url: "https://www.kaist.ac.kr/", logo: "/assets/img/clients/kaist_logo.png", mono: "KAIST" },
+                    { org: "Seoul National University", country: "KR", person: "Prof. Hyo-Pil Shin", url: "https://www.snu.ac.kr/", logo: "/assets/img/clients/snu.png", mono: "SNU" },
+                    { org: "Seoul National University", country: "KR", person: "Prof. Dongil Chung", url: "https://www.snu.ac.kr/", logo: "/assets/img/clients/snu.png", mono: "SNU" },
+                    { org: "Yonsei University", country: "KR", person: "Prof. Jinwoo Kim", url: "https://www.yonsei.ac.kr/", mono: "YU" },
+                    { org: "Sangmyung University", country: "KR", person: "Prof. Eui-Chul Lee", url: "", mono: "SMU" }
+                ]
+            },
+            {
+                title: "Clinical Partners",
+                items: [
+                    { org: "Yongin Severance Hospital", sub: "Yonsei University College of Medicine", country: "KR", person: "Prof. Jin Young Park", url: "https://yi.severance.healthcare/yi-en/index.do", mono: "YSH" },
+                    { org: "Gangnam Severance Hospital", sub: "Yonsei University College of Medicine", country: "KR", person: "Prof. Jae-Jin Kim", url: "", mono: "GSH" },
+                    { org: "Ewha Womans University Hospital", country: "KR", person: "Prof. GeonHa Kim", url: "", mono: "EWUH" },
+                    { org: "Chung-Ang University Hospital", country: "KR", person: "Prof. Doug Hyun Han", url: "", mono: "CAUH" }
+                ]
+            },
+            {
+                title: "Public Institutions & Industry",
+                items: [
+                    { org: "Korea Foundation for Research Culture and Innovation", country: "KR", url: "", mono: "KFRCI" },
+                    { org: "UNESCO World Heritage Sites in South Korea", country: "KR", url: "", mono: "WH" },
+                    { org: "HAII Corp.", country: "KR", url: "https://www.haii.io/", logo: "/assets/img/clients/haii.jpg", mono: "HAII" },
+                    { org: "Digital Medic Inc.", country: "KR", url: "", mono: "DM" }
+                ]
+            }
+        ];
+
+        function logoBlock(item) {
+            const mono = `<span class="font-serif font-bold text-[#12264A] ${item.mono.length > 3 ? 'text-sm' : 'text-xl'} tracking-wide">${item.mono}</span>`;
+            if (item.logo) {
+                return `<img src="${item.logo}" alt="${item.org} logo" class="max-h-14 max-w-[85%] object-contain"
+                        onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'font-serif font-bold text-[#12264A] text-xl',textContent:'${item.mono}'}))">`;
+            }
+            return mono;
+        }
+
+        function cardBlock(item) {
+            const tag = item.url ? 'a' : 'div';
+            const attrs = item.url ? `href="${item.url}" target="_blank" rel="noopener"` : '';
+            return `
+                <${tag} ${attrs} class="group bg-white border border-gray-200 shadow-sm hover:shadow-md hover:border-[#114B74] transition-all flex flex-col">
+                    <div class="h-24 bg-[#F4F6F9] border-b border-gray-200 flex items-center justify-center">
+                        ${logoBlock(item)}
+                    </div>
+                    <div class="p-5 flex flex-col flex-grow">
+                        <div class="flex items-start justify-between gap-3 mb-1">
+                            <h3 class="text-[17px] font-serif font-bold text-[#12264A] leading-snug group-hover:text-[#114B74] transition-colors">${item.org}</h3>
+                            <span class="flex-shrink-0 bg-[#12264A] text-white text-[10px] font-bold px-2 py-0.5 tracking-wider rounded">${item.country}</span>
+                        </div>
+                        ${item.sub ? `<p class="text-xs text-gray-500 mb-2">${item.sub}</p>` : ''}
+                        ${item.person ? `<p class="text-sm text-gray-700 font-medium mt-auto pt-3">${item.person}</p>` : ''}
+                        ${item.url ? `<span class="text-[11px] font-bold tracking-wider uppercase text-[#114B74] group-hover:text-[#E0B24D] mt-3">Visit website →</span>` : ''}
+                    </div>
+                </${tag}>
+            `;
+        }
+
+        function renderCollaborators() {
+            const el = document.getElementById('collab-sections');
+            el.innerHTML = COLLAB_GROUPS.map(g => `
+                <section>
+                    <h2 class="text-2xl font-serif font-bold text-[#12264A] inline-block mb-6">
+                        ${g.title}
+                        <span class="block h-[3px] w-12 bg-[#E0B24D] mt-2"></span>
+                    </h2>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                        ${g.items.map(cardBlock).join('')}
+                    </div>
+                </section>
+            `).join('');
+        }
+
         document.addEventListener("DOMContentLoaded", () => {
+            renderCollaborators();
             fetch('/header.html').then(r => r.text()).then(h => document.getElementById('header-container').innerHTML = h);
             fetch('/footer.html').then(r => r.text()).then(f => document.getElementById('footer-container').innerHTML = f);
         });
