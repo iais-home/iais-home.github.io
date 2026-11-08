@@ -62,13 +62,34 @@
             </div>
         </section>
 
-        <!-- 2. Research Section -->
-        <section class="pt-8 pb-16 bg-white">
+        <!-- 2. Research (Publications) Section -->
+        <section class="py-16 bg-[#F4F6F9] border-t border-gray-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-end mb-8 border-b border-gray-300 pb-3">
+                    <div>
+                        <h2 class="text-3xl font-serif font-bold text-[#12264A] inline-block relative">
+                            Research
+                            <span class="block h-[3px] w-12 bg-[#E0B24D] mt-2"></span>
+                        </h2>
+                    </div>
+                    <a href="/publications/journal.html" class="text-xs font-bold tracking-wider text-[#114B74] hover:text-[#E0B24D] transition-colors flex items-center gap-1">
+                        ALL PUBLICATIONS <span class="text-base leading-none font-bold">+</span>
+                    </a>
+                </div>
+
+                <div id="home-research-list" class="space-y-4">
+                    <!-- Javascript will populate this -->
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Centers Section -->
+        <section class="py-16 bg-white border-t border-gray-200">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex justify-between items-end mb-8 border-b border-gray-200 pb-3">
                     <div>
                         <h2 class="text-3xl font-serif font-bold text-[#12264A] inline-block relative">
-                            Research Centers
+                            Centers
                             <span class="block h-[3px] w-12 bg-[#E0B24D] mt-2"></span>
                         </h2>
                     </div>
@@ -83,12 +104,10 @@
             </div>
         </section>
 
-        
-    
         <!-- 4. About IAIS Section -->
-        <section class="py-16 bg-white border-t border-gray-200">
+        <section class="py-16 bg-[#F4F6F9] border-t border-gray-200">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="flex justify-between items-end mb-8 border-b border-gray-200 pb-3">
+                <div class="flex justify-between items-end mb-8 border-b border-gray-300 pb-3">
                     <div>
                         <h2 class="text-3xl font-serif font-bold text-[#12264A] inline-block relative">
                             About IAIS
@@ -100,11 +119,8 @@
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <!-- Mission and History Card -->
                     <a href="/about/mission.html" class="group relative h-64 flex flex-col items-center justify-center text-center overflow-hidden rounded shadow-sm hover:shadow-lg transition-all">
-                        <!-- Background Image -->
                         <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style="background-image: url('https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&w=800&q=80');"></div>
-                        <!-- Dark Overlay -->
                         <div class="absolute inset-0 bg-[#12264A]/70 group-hover:bg-[#12264A]/50 transition-colors duration-300"></div>
-                        <!-- Content -->
                         <h3 class="relative z-10 text-2xl font-serif font-bold text-white group-hover:text-[#E0B24D] transition-colors tracking-wide">
                             Mission & History
                         </h3>
@@ -112,11 +128,8 @@
                     
                     <!-- Organisation Card -->
                     <a href="/about/organisation.html" class="group relative h-64 flex flex-col items-center justify-center text-center overflow-hidden rounded shadow-sm hover:shadow-lg transition-all">
-                        <!-- Background Image -->
                         <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style="background-image: url('https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=800&q=80');"></div>
-                        <!-- Dark Overlay -->
                         <div class="absolute inset-0 bg-[#114B74]/70 group-hover:bg-[#114B74]/50 transition-colors duration-300"></div>
-                        <!-- Content -->
                         <h3 class="relative z-10 text-2xl font-serif font-bold text-white group-hover:text-[#E0B24D] transition-colors tracking-wide">
                             Organisation
                         </h3>
@@ -124,11 +137,8 @@
                     
                     <!-- Collaborators Card -->
                     <a href="/about/collaborators.html" class="group relative h-64 flex flex-col items-center justify-center text-center overflow-hidden rounded shadow-sm hover:shadow-lg transition-all">
-                        <!-- Background Image -->
                         <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style="background-image: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80');"></div>
-                        <!-- Dark Overlay -->
                         <div class="absolute inset-0 bg-gray-900/70 group-hover:bg-gray-900/50 transition-colors duration-300"></div>
-                        <!-- Content -->
                         <h3 class="relative z-10 text-2xl font-serif font-bold text-white group-hover:text-[#E0B24D] transition-colors tracking-wide">
                             Collaborators
                         </h3>
@@ -137,11 +147,10 @@
             </div>
         </section>
 
-    
         <!-- 5. Job Openings Section -->
-        <section class="py-16 bg-[#F4F6F9] border-t border-gray-200">
+        <section class="py-16 bg-white border-t border-gray-200">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="flex justify-between items-end mb-8 border-b border-gray-300 pb-3">
+                <div class="flex justify-between items-end mb-8 border-b border-gray-200 pb-3">
                     <div>
                         <h2 class="text-3xl font-serif font-bold text-[#12264A] inline-block relative">
                             Job Openings
@@ -153,28 +162,22 @@
                     </a>
                 </div>
 
-                <div id="home-jobs-grid" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div id="home-jobs-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     <!-- Javascript will populate this -->
                 </div>
             </div>
         </section>
-
     </main>
 
     <!-- Footer -->
     <div id="footer-container"></div>
 
     <!-- Data Scripts -->
-    <script src="/jobs/jobs-data.js"></script>
-    <!-- Data Scripts -->
-    <script src="/publications/journal.js"></script>
-    <!-- Data Scripts -->
-    <script src="/jobs/jobs-data.js"></script>
-    <!-- Data Scripts -->
-    <script src="/centers/centers.js"></script>
     <script src="/news/hero-slider.js"></script>
     <script src="/news/news-data.js"></script>
-    <script src="/news/activities.js"></script>
+    <script src="/publications/journal.js"></script>
+    <script src="/centers/centers.js"></script>
+    <script src="/jobs/jobs-data.js"></script>
 
     <script>
         // 1. 공통 헤더/푸터 로드
@@ -212,32 +215,7 @@
             `).join('');
         }
 
-        
-        // 메인 화면 Centers 섹션 자동 렌더링
-        function renderHomeCenters() {
-            const container = document.getElementById('home-centers-grid');
-            if (!container || typeof CENTERS_DATA === 'undefined') return;
-
-            // Define background colors for the 4 centers
-            const bgColors = ["bg-[#12264A]", "bg-[#114B74]", "bg-[#3B4558]", "bg-[#DCA642]"];
-            const textColors = ["text-white", "text-white", "text-white", "text-[#12264A]"];
-            const hoverColors = ["group-hover:text-[#E0B24D]", "group-hover:text-[#E0B24D]", "group-hover:text-[#E0B24D]", "group-hover:text-black"];
-            const pColors = ["text-gray-300", "text-blue-100", "text-gray-300", "text-[#12264A]/80"];
-
-            container.innerHTML = CENTERS_DATA.slice(0, 4).map((c, i) => `
-                <a href="/centers/center-detail.html?id=${c.id}" class="group relative ${bgColors[i]} h-52 flex flex-col items-center justify-center p-6 text-center shadow-sm hover:shadow-lg transition-all transform hover:-translate-y-1">
-                    <h3 class="text-2xl font-serif font-bold ${textColors[i]} ${hoverColors[i]} transition-colors leading-tight">
-                        ${c.shortName}
-                    </h3>
-                    <p class="text-xs ${pColors[i]} mt-3 font-medium max-w-xs leading-relaxed">
-                        ${c.slogan}
-                    </p>
-                </a>
-            `).join('');
-        }
-
-        
-        // 메인 화면 Research(Publications) 자동 렌더링
+        // 3. 메인 화면 Research (Publications) 자동 렌더링
         function renderHomeResearch() {
             const container = document.getElementById('home-research-list');
             if (!container || typeof JOURNAL_PAPERS === 'undefined') return;
@@ -266,14 +244,36 @@
             `).join('');
         }
 
-        // 메인 화면 Job Openings 자동 렌더링
+        // 4. 메인 화면 Centers 섹션 자동 렌더링
+        function renderHomeCenters() {
+            const container = document.getElementById('home-centers-grid');
+            if (!container || typeof CENTERS_DATA === 'undefined') return;
+
+            const bgColors = ["bg-[#12264A]", "bg-[#114B74]", "bg-[#3B4558]", "bg-[#DCA642]"];
+            const textColors = ["text-white", "text-white", "text-white", "text-[#12264A]"];
+            const hoverColors = ["group-hover:text-[#E0B24D]", "group-hover:text-[#E0B24D]", "group-hover:text-[#E0B24D]", "group-hover:text-black"];
+            const pColors = ["text-gray-300", "text-blue-100", "text-gray-300", "text-[#12264A]/80"];
+
+            container.innerHTML = CENTERS_DATA.slice(0, 4).map((c, i) => `
+                <a href="/centers/center-detail.html?id=${c.id}" class="group relative ${bgColors[i]} h-52 flex flex-col items-center justify-center p-6 text-center shadow-sm hover:shadow-lg transition-all transform hover:-translate-y-1">
+                    <h3 class="text-2xl font-serif font-bold ${textColors[i]} ${hoverColors[i]} transition-colors leading-tight">
+                        ${c.shortName}
+                    </h3>
+                    <p class="text-xs ${pColors[i]} mt-3 font-medium max-w-xs leading-relaxed">
+                        ${c.slogan}
+                    </p>
+                </a>
+            `).join('');
+        }
+
+        // 5. 메인 화면 Job Openings 자동 렌더링
         function renderHomeJobs() {
             const container = document.getElementById('home-jobs-grid');
             if (!container || typeof JOBS_DATA === 'undefined') return;
 
             if (JOBS_DATA.length === 0) {
                 container.innerHTML = `
-                    <div class="col-span-1 md:col-span-3 bg-white p-6 shadow-sm border border-gray-100 flex items-center justify-center h-32">
+                    <div class="col-span-full bg-white p-6 shadow-sm border border-gray-100 flex items-center justify-center h-32">
                         <p class="text-gray-500 font-medium tracking-wide">No openings at the moment.</p>
                     </div>
                 `;
@@ -282,7 +282,7 @@
 
             const latestThree = JOBS_DATA.slice(0, 3);
             container.innerHTML = latestThree.map(job => `
-                <div class="bg-white p-6 shadow-sm border border-gray-100 flex flex-col justify-between rounded">
+                <div class="bg-white p-6 shadow-sm border border-gray-100 flex flex-col justify-between rounded hover:border-[#114B74] transition-all">
                     <div>
                         <span class="inline-block bg-[#12264A] text-white text-[10px] font-bold px-2 py-0.5 mb-3 tracking-wider rounded">
                             ${job.type}
@@ -305,7 +305,7 @@
             `).join('');
         }
 
-// 4. 슬라이더 동적 렌더링
+        // 6. 슬라이더 동적 렌더링
         function renderHeroSlider() {
             const track = document.getElementById('sliderTrack');
             const dotsContainer = document.getElementById('sliderDots');
@@ -329,11 +329,10 @@
                 <span class="dot ${index === 0 ? 'active' : ''}" onclick="goToSlide(${index})"></span>
             `).join('');
             
-            // 전역 변수 초기화 (슬라이더 개수 동기화)
             totalSlides = HERO_SLIDER_DATA.length;
         }
 
-        // 5. 슬라이더 동작 로직
+        // 7. 슬라이더 동작 제어
         let currentSlide = 0;
         let totalSlides = 0;
         let slideInterval;
@@ -360,66 +359,62 @@
             slideInterval = setInterval(nextSlide, 5000);
         }
 
-        // 실행
+        // 8. 전역 초기화 실행
         document.addEventListener("DOMContentLoaded", () => {
             loadComponents();
             renderHeroSlider();
             renderHomeNews();
             renderHomeResearch();
             renderHomeCenters();
+            renderHomeJobs();
             slideInterval = setInterval(nextSlide, 5000);
         });
-    
-// Mobile Menu Delegation Logic
-document.addEventListener('click', function(e) {
-    // Open Menu
-    const menuBtn = e.target.closest('#mobile-menu-btn');
-    if (menuBtn) {
-        const mobileMenu = document.getElementById('mobile-menu');
-        if (mobileMenu) {
-            mobileMenu.classList.remove('hidden');
-            mobileMenu.classList.add('flex');
-            document.body.style.overflow = 'hidden';
-        }
-        return;
-    }
 
-    // Close Menu
-    const closeBtn = e.target.closest('#mobile-close-btn');
-    if (closeBtn) {
-        const mobileMenu = document.getElementById('mobile-menu');
-        if (mobileMenu) {
-            mobileMenu.classList.add('hidden');
-            mobileMenu.classList.remove('flex');
-            document.body.style.overflow = '';
-        }
-        return;
-    }
-
-    // Accordion Logic
-    const toggleBtn = e.target.closest('.mobile-menu-toggle');
-    if (toggleBtn) {
-        // Prevent if clicking View All link inside the button
-        if(e.target.tagName === 'A') return;
-        
-        const targetId = toggleBtn.getAttribute('data-target');
-        const targetList = document.getElementById(targetId);
-        const icon = toggleBtn.querySelector('svg');
-        
-        if (targetList) {
-            if (targetList.classList.contains('hidden')) {
-                targetList.classList.remove('hidden');
-                targetList.classList.add('flex');
-                if (icon) icon.classList.add('rotate-180');
-            } else {
-                targetList.classList.add('hidden');
-                targetList.classList.remove('flex');
-                if (icon) icon.classList.remove('rotate-180');
+        // 9. 모바일 메뉴 이벤트 위임 (Header 동적 로드 지원)
+        document.addEventListener('click', function(e) {
+            const menuBtn = e.target.closest('#mobile-menu-btn');
+            if (menuBtn) {
+                const mobileMenu = document.getElementById('mobile-menu');
+                if (mobileMenu) {
+                    mobileMenu.classList.remove('hidden');
+                    mobileMenu.classList.add('flex');
+                    document.body.style.overflow = 'hidden';
+                }
+                return;
             }
-        }
-    }
-});
 
-</script>
+            const closeBtn = e.target.closest('#mobile-close-btn');
+            if (closeBtn) {
+                const mobileMenu = document.getElementById('mobile-menu');
+                if (mobileMenu) {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenu.classList.remove('flex');
+                    document.body.style.overflow = '';
+                }
+                return;
+            }
+
+            const toggleBtn = e.target.closest('.mobile-menu-toggle');
+            if (toggleBtn) {
+                if(e.target.tagName === 'A') return;
+                
+                const targetId = toggleBtn.getAttribute('data-target');
+                const targetList = document.getElementById(targetId);
+                const icon = toggleBtn.querySelector('svg');
+                
+                if (targetList) {
+                    if (targetList.classList.contains('hidden')) {
+                        targetList.classList.remove('hidden');
+                        targetList.classList.add('flex');
+                        if (icon) icon.classList.add('rotate-180');
+                    } else {
+                        targetList.classList.add('hidden');
+                        targetList.classList.remove('flex');
+                        if (icon) icon.classList.remove('rotate-180');
+                    }
+                }
+            }
+        });
+    </script>
 </body>
 </html>
