@@ -82,14 +82,14 @@ const CENTERS_DATA = [
   },
   {
     id: "medipharm-ai",
-    name: "Center for Medical & Pharmacological AI",
-    shortName: "Medical & Pharmacological AI",
+    name: "Center for Medicine, Pharmacology & AI",
+    shortName: "Medicine, Pharmacology & AI",
     badge: "CLINICAL TRANSLATION",
     slogan: "Virtual-Net Micro Fundamental Models for Multi-Disease Decoding",
     summary: "Develops in-silico physiological foundations to decode depression, generalized anxiety, and suicidal ideation from non-contact rPPG camera streams and multi-modal clinical timeseries.",
     description: `
       <p class="text-xl text-gray-800 font-serif leading-relaxed mb-6">
-        The <strong>Center for Medical & Pharmacological AI</strong> translates mathematical physiological models into software-as-a-medical-device (SaMD) solutions and digital therapeutic benchmarks.
+        The <strong>Center for Medicine, Pharmacology & AI</strong> translates mathematical physiological models into software-as-a-medical-device (SaMD) solutions and digital therapeutic benchmarks.
       </p>
       <p class="mb-6">
         Rather than relying on uninterpretable end-to-end black boxes, our proprietary <em>Virtual-Net</em> framework reconstructs latent autonomic nervous system (ANS) dynamics directly from ambient video and wearable sensors. This enables robust, motion-tolerant multi-disease screening in unrestrained real-world environments.
