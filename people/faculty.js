@@ -1,104 +1,92 @@
 // people/faculty.js
+// IAIS Scholars (Faculty).
+// Fields:
+//   id            unique slug used in faculty-detail.html?id=...
+//   name, title   shown on the card and the profile page
+//   subTitle      optional second line on the card
+//   website       optional personal website; the link is hidden when empty
+//   photo         image path
+//   photoCredit   optional caption under the profile card
+//   bio           HTML biography
+//   researchFocus list of research themes (optional)
+//   selectedPubs  list of publications (optional); each item is a string or
+//                 { title, venue, link } where link points to a publication detail page or URL
 const FACULTY_DATA = [
   {
-    id: "jeehang-lee",
-    name: "Jee-Hang Lee, Ph.D.",
-    title: "President & Professor",
-    subTitle: "Professor @ Sangmyung University, KR",
-    website: "https://iais.re.kr",
-    photo: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80",
-    photoCredit: "Courtesy of IAIS",
+    id: "jee-hang-lee",
+    name: "Jee Hang Lee, Ph.D.",
+    title: "President, IAIS Scholar",
+    subTitle: "Professor, Department of Human-Centered AI, Sangmyung University",
+    website: "",
+    photo: "/assets/img/team/lee.png",
+    photoCredit: "",
     bio: `
-      <p class="mb-4">
-        Dr. Jee-Hang Lee is the President and Professor at the Institute for Advanced Intelligence Study (IAIS), and holds a professorship at Sangmyung University. 
-        He completed his Ph.D. at the University of Bath (2015) and has established an international research trajectory spanning Computational Neuroscience, Reinforcement Learning Meta-Control, and Digital Phenomics.
-      </p>
-      <p class="mb-4">
-        His foundational work centers on decoding the mathematical mechanisms of cognitive control and translating them into verifiable, human-aligned machine intelligence. His laboratory has pioneered non-contact physiological decoding algorithms and prefrontal meta-learning frameworks published in premier venues including <em>Cell Reports</em>, <em>ACM CHI</em>, <em>JMIR</em>, and <em>RLDM</em>.
+      <p>
+        Dr. Jee Hang Lee is the founding President of the Institute for Advanced Intelligence Study (IAIS). He is a Professor in the Department of Human-Centered AI at Sangmyung University and has been a Visiting Professor in the Division of Brain & Cognitive Science at Ewha Womans University since 2025.
       </p>
       <p>
-        At IAIS, Dr. Lee oversees the institute's dual-track research architecture, orchestrating pure scientific inquiry in cooperation with the Engineering Track to validate computational theories in-the-wild.
-      </p>
-    `,
-    researchFocus: [
-      "Prefrontal Meta-Control & Reinforcement Learning",
-      "In-the-Wild Digital Phenomics & rPPG Dynamics",
-      "Neuro-Symbolic Cognitive Architectures",
-      "Dynamic Game-Theoretic Models of Human-AI Interaction"
-    ],
-    selectedPubs: [
-      "Control of the human inference process through in-silico task design. <em>Cell Reports</em>, 2024.",
-      "Anzeilax, a Smartphone-based Digital Therapeutic for Generalized Anxiety Disorder. <em>JMIR</em>, 2025.",
-      "Talk to You More: Utilizing Self-talk as a Mechanism for Alleviating Anxiety. <em>ACM CHI</em>, 2025."
-    ]
-  },
-  {
-    id: "affiliated-neuro-md",
-    name: "M.D. Scholar",
-    title: "Affiliated Professor",
-    subTitle: "Clinical Neuroscience & Digital Biomarkers",
-    website: "#",
-    photo: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80",
-    photoCredit: "Courtesy of IAIS Clinical Network",
-    bio: `
-      <p class="mb-4">
-        Affiliated Professor at IAIS focusing on clinical psychiatry and neuroimaging. Holding an M.D. and Ph.D. in Bio and Brain Engineering, this role anchors the clinical validation pipelines for digital therapeutics and autonomic phenotyping.
+        He received his Ph.D. in Computer Science from the University of Bath, UK, in 2015 for research on norm awareness in the behaviour of virtual characters. He then worked as a Research Associate at the University of Bath and as a Research Assistant Professor at the KAIST Center for Neuroscience-inspired AI, where he held a KI Research Fellowship on brain-inspired artificial intelligence. Before his doctoral studies, he led software projects at the DMC R&D Centre of Samsung Electronics and developed the Hangul Word Processor at Hancom.
       </p>
       <p>
-        Leads protocol design for IRB approvals, hospital cohort studies, and multimodal biosignal verification for affective disorders.
+        His research turns the computational mechanisms of human cognition into artificial intelligence, and then puts that intelligence to work for people. His work spans prefrontal meta-control in reinforcement learning, AI that optimises human learning, digital biomarkers and digital therapeutics, and the psychology of AI. It has appeared in venues including <em>Science Robotics</em>, <em>Cell Reports</em>, <em>JMIR</em>, <em>Alzheimer's &amp; Dementia</em>, ACM CHI and RLDM.
       </p>
     `,
     researchFocus: [
-      "Clinical Trial Design for Software as a Medical Device (SaMD)",
-      "Neural Oscillations in Anxiety & Panic Disorders",
-      "Ecological Momentary Assessment (EMA) Trajectories"
+      "Decision making and reinforcement learning in humans and machines",
+      "Brain-inspired AI and prefrontal meta-control",
+      "Psychology of AI, digital psychology and digital physiology",
+      "Digital therapeutics and digital biomarkers",
+      "Computational modelling of human behaviour"
     ],
     selectedPubs: [
-      "Response Time Dynamics From Noncognitive EMA in Geriatric Depression. <em>JMIR Aging</em>, 2026."
+      { title: "Toward high-performance, memory-efficient, and fast reinforcement learning: Lessons from decision neuroscience", venue: "Science Robotics, 2019", link: "/publications/journal-detail.html?id=j2019-science-robotics" },
+      { title: "Controlling human causal inference through in silico task design", venue: "Cell Reports, 2024", link: "/publications/journal-detail.html?id=j2024-in-silico-task-design" },
+      { title: "Anzeilax, a Smartphone-based Digital Therapeutic for Generalized Anxiety Disorder: A Randomized Controlled Trial", venue: "Journal of Medical Internet Research, 2025", link: "/publications/journal-detail.html?id=j2025-anzeilax-rct" },
+      { title: "Prefrontal Meta-Control Incorporating Mental Simulation Enhances the Adaptivity of Reinforcement Learning Agents in Dynamic Environments", venue: "Frontiers in Computational Neuroscience, 2025", link: "/publications/journal-detail.html?id=j2025-prefrontal-meta-control-simulation" },
+      { title: "Talk to You More, Listen to You More, and Feel Better in Your Mind: Utilizing Self-talk as a Mechanism of Action for Alleviating Anxiety", venue: "ACM CHI, 2025", link: "/publications/conf-detail.html?id=c2025-chi-self-talk" }
     ]
   },
   {
-    id: "affiliated-legal",
-    name: "Juris Scholar",
-    title: "Affiliated Professor",
-    subTitle: "Computational Jurisprudence & Formal Logic",
-    website: "#",
-    photo: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=80",
-    photoCredit: "Courtesy of IAIS Legal Center",
+    id: "ji-young-son",
+    name: "Ji-Young Son, Ph.D.",
+    title: "Director of Lex AI, IAIS Scholar",
+    subTitle: "Center for Computational Law",
+    website: "",
+    photo: "/assets/img/team/son.jpg",
+    photoCredit: "",
     bio: `
-      <p class="mb-4">
-        Affiliated Professor leading normative modeling and computational jurisprudence at the Center for Computational Law (Lex AI). Specializes in formal deontic logic, statutory verification, and the prevention of semantic drift in foundation models.
+      <p>
+        Dr. Ji-Young Son is the Director of Lex AI, the Center for Computational Law at IAIS.
+      </p>
+      <p>
+        Dr. Son's research grounds Computational Law in the computationalism of cognitive science. This work analyses criminal legal judgment, and in particular the free evaluation of evidence, as structured inference, and defines the conditions under which formalised evidence evaluation can be trusted. Dr. Son is Co-Principal Investigator of the project on an AI- and cloud-based remote testimony system for children, funded by the Ministry of Science and ICT.
       </p>
     `,
     researchFocus: [
-      "Formal Methods in Constitutional & Administrative Law",
-      "Deontic Logic Constraints for Autonomous AI",
-      "Statutory Reasoning Verification"
+      "Computational Law and its cognitive-scientific foundations",
+      "Criminal legal judgment and the free evaluation of evidence",
+      "Computational credibility of evidence",
+      "AI-assisted testimony for child witnesses"
     ],
     selectedPubs: [
-      "From Neurons to Norms: Neuro-Symbolic Synthesis in Statutory Analysis, 2026."
+      { title: "Computational Credibility and the Structure of Evidence Evaluation in Criminal Justice", venue: "Journal of Public Choice, 5(1), 2026" },
+      { title: "Materialization of the Process of forming Free Evaluation of Evidence in the Testimony and institutional Improvement", venue: "Review of Institution and Economics, 17(2), 2023" }
     ]
   },
   {
-    id: "affiliated-psychology",
-    name: "Cognitive Scholar",
-    title: "Affiliated Professor",
-    subTitle: "Psychometrics & Cognitive Psychology",
-    website: "#",
-    photo: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80",
-    photoCredit: "Courtesy of IAIS",
+    id: "yu-jin-cha",
+    name: "Yu-Jin Cha, M.D., Ph.D.",
+    title: "Director of Neuro AI, IAIS Scholar",
+    subTitle: "Center for Computational Brain & AI",
+    website: "",
+    photo: "/assets/img/team/cha.jpg",
+    photoCredit: "",
     bio: `
-      <p class="mb-4">
-        Specializes in behavioral psychometrics and human cognitive architectures. Oversees behavioral experiment designs, ensuring that sensor-derived digital phenotypes correlate robustly with clinical psychometric instruments.
+      <p>
+        Dr. Yu-Jin Cha is the Director of Neuro AI, the Center for Computational Brain &amp; AI at IAIS. As a physician-scientist, Dr. Cha brings clinical and neuroscientific expertise to the Center's work on the computational mechanisms of the brain.
       </p>
     `,
-    researchFocus: [
-      "Psychometric Modeling in Longitudinal Cohorts",
-      "Cognitive Bias Modification Paradigms",
-      "Human-Agent Interaction in Digital Mental Health"
-    ],
-    selectedPubs: [
-      "Optimizing mobile cognitive assessment in older adults. <em>Scientific Reports</em>, 2025."
-    ]
+    researchFocus: [],
+    selectedPubs: []
   }
 ];
