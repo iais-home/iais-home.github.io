@@ -148,12 +148,13 @@
                             <span class="block h-[3px] w-12 bg-[#E0B24D] mt-2"></span>
                         </h2>
                     </div>
+                    <a href="/jobs/jobs.html" class="text-xs font-bold tracking-wider text-[#114B74] hover:text-[#E0B24D] transition-colors flex items-center gap-1">
+                        MORE OPENINGS <span class="text-base leading-none font-bold">+</span>
+                    </a>
                 </div>
 
-                <div id="home-jobs-list" class="space-y-4">
-                    <div class="bg-white p-6 md:p-8 shadow-sm border border-gray-100 text-center">
-                        <p class="text-gray-500 font-medium">No openings at the moment.</p>
-                    </div>
+                <div id="home-jobs-grid" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Javascript will populate this -->
                 </div>
             </div>
         </section>
@@ -164,7 +165,11 @@
     <div id="footer-container"></div>
 
     <!-- Data Scripts -->
+    <script src="/jobs/jobs-data.js"></script>
+    <!-- Data Scripts -->
     <script src="/publications/journal.js"></script>
+    <!-- Data Scripts -->
+    <script src="/jobs/jobs-data.js"></script>
     <!-- Data Scripts -->
     <script src="/centers/centers.js"></script>
     <script src="/news/hero-slider.js"></script>
@@ -260,6 +265,46 @@
                 </article>
             `).join('');
         }
+
+        // 메인 화면 Job Openings 자동 렌더링
+        function renderHomeJobs() {
+            const container = document.getElementById('home-jobs-grid');
+            if (!container || typeof JOBS_DATA === 'undefined') return;
+
+            if (JOBS_DATA.length === 0) {
+                container.innerHTML = `
+                    <div class="col-span-1 md:col-span-3 bg-white p-6 shadow-sm border border-gray-100 flex items-center justify-center h-32">
+                        <p class="text-gray-500 font-medium tracking-wide">No openings at the moment.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            const latestThree = JOBS_DATA.slice(0, 3);
+            container.innerHTML = latestThree.map(job => `
+                <div class="bg-white p-6 shadow-sm border border-gray-100 flex flex-col justify-between rounded">
+                    <div>
+                        <span class="inline-block bg-[#12264A] text-white text-[10px] font-bold px-2 py-0.5 mb-3 tracking-wider rounded">
+                            ${job.type}
+                        </span>
+                        <a href="/jobs/job-detail.html?id=${job.id}" class="block">
+                            <h3 class="text-lg font-serif font-bold text-[#12264A] mb-2 leading-snug hover:text-[#114B74] transition-colors">
+                                ${job.title}
+                            </h3>
+                        </a>
+                        <p class="text-xs text-[#114B74] font-semibold mb-3">${job.department}</p>
+                        <p class="text-xs text-gray-600 mb-4 font-normal line-clamp-2">${job.summary}</p>
+                    </div>
+                    <div class="flex justify-between items-center pt-3 border-t border-gray-100">
+                        <span class="text-xs text-gray-500 font-medium">Deadline: ${job.deadline}</span>
+                        <a href="/jobs/job-detail.html?id=${job.id}" class="inline-flex items-center text-xs font-bold text-[#114B74] hover:text-[#E0B24D] uppercase tracking-wider">
+                            Apply →
+                        </a>
+                    </div>
+                </div>
+            `).join('');
+        }
+
 // 4. 슬라이더 동적 렌더링
         function renderHeroSlider() {
             const track = document.getElementById('sliderTrack');
@@ -320,7 +365,7 @@
             loadComponents();
             renderHeroSlider();
             renderHomeNews();
-            renderHomeActivities();
+            renderHomeResearch();
             renderHomeCenters();
             slideInterval = setInterval(nextSlide, 5000);
         });

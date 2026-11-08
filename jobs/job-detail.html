@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Detail - IAIS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600;700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Public Sans', sans-serif; display: flex; flex-direction: column; min-height: 100vh; }
+        h1, h2, h3, h4, .font-serif { font-family: 'Source Serif 4', Georgia, serif; }
+    </style>
+</head>
+<body class="bg-[#FAFBFD] text-gray-800">
+    <div id="header-container"></div>
+
+    <main class="flex-grow">
+        <!-- Top Navy Banner -->
+        <section class="bg-[#12264A] text-white py-14 border-b border-gray-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h1 class="text-4xl md:text-5xl font-serif font-bold tracking-tight text-white">Job Openings</h1>
+                <div class="w-16 h-1 bg-[#E0B24D] mx-auto mt-4"></div>
+            </div>
+        </section>
+
+        <!-- Job Content -->
+        <article class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div class="flex items-center space-x-2 text-xs text-gray-500 mb-8 uppercase tracking-wider">
+                <a href="/peanuts.html" class="hover:text-[#114B74]">Home</a>
+                <span>/</span>
+                <a href="/jobs/jobs.html" class="hover:text-[#114B74]">Jobs</a>
+                <span>/</span>
+                <span id="breadcrumb-type" class="text-gray-700 font-semibold"></span>
+            </div>
+
+            <div class="border-b border-gray-200 pb-8 mb-10">
+                <span id="job-type" class="inline-block bg-[#12264A] text-white text-xs font-bold px-2.5 py-1 mb-4 uppercase tracking-wider rounded"></span>
+                <h2 id="job-title" class="text-3xl md:text-4xl font-serif font-bold text-[#12264A] leading-tight mb-4"></h2>
+                
+                <div class="bg-white p-5 border-l-4 border-[#114B74] shadow-sm rounded-r space-y-2 text-sm mt-6">
+                    <p><strong>Department:</strong> <span id="job-dept" class="text-gray-700"></span></p>
+                    <p><strong>Application Deadline:</strong> <span id="job-deadline" class="text-red-600 font-bold"></span></p>
+                </div>
+            </div>
+
+            <div id="job-body" class="prose prose-lg max-w-none text-gray-700 leading-relaxed space-y-6"></div>
+
+            <div class="mt-14 pt-8 border-t border-gray-200 flex justify-between items-center">
+                <a href="/jobs/jobs.html" class="inline-flex items-center text-sm font-semibold text-[#114B74] hover:text-[#E0B24D] transition-colors">
+                    ← Back to Job Openings
+                </a>
+                <a href="mailto:chancellor.iais@gmail.com" class="inline-flex items-center bg-[#114B74] hover:bg-[#12264A] text-white text-sm font-bold py-3 px-8 rounded transition-colors">
+                    Apply Now
+                </a>
+            </div>
+        </article>
+    </main>
+
+    <div id="footer-container"></div>
+
+    <script src="/jobs/jobs-data.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            fetch('/header.html').then(r => r.text()).then(h => document.getElementById('header-container').innerHTML = h);
+            fetch('/footer.html').then(r => r.text()).then(f => document.getElementById('footer-container').innerHTML = f);
+
+            const id = new URLSearchParams(window.location.search).get('id');
+            const job = (typeof JOBS_DATA !== 'undefined') ? JOBS_DATA.find(item => item.id === id) : null;
+
+            if (job) {
+                document.title = `${job.title} - IAIS`;
+                document.getElementById('breadcrumb-type').textContent = job.type;
+                document.getElementById('job-type').textContent = job.type;
+                document.getElementById('job-title').textContent = job.title;
+                document.getElementById('job-dept').textContent = job.department;
+                document.getElementById('job-deadline').textContent = job.deadline;
+                document.getElementById('job-body').innerHTML = job.content;
+            } else {
+                document.getElementById('job-title').textContent = "Job Not Found";
+                document.getElementById('job-body').innerHTML = "<p>The requested job opening could not be found or is no longer available.</p>";
+            }
+        });
+    </script>
+</body>
+</html>

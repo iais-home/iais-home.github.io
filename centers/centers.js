@@ -3,7 +3,7 @@ const CENTERS_DATA = [
   {
     id: "comp-brain-ai",
     name: "Center for Computational Brain & AI",
-    shortName: "Brain & AI",
+    shortName: "Computational Brain & AI",
     badge: "FOUNDATIONAL AI",
     slogan: "Unifying Prefrontal Meta-Control with Adaptive Deep Reinforcement Learning",
     summary: "Reverse-engineers mammalian cognitive control to architect resource-rational artificial agents capable of rapid zero-shot adaptation in dynamic, non-stationary environments.",
@@ -30,7 +30,7 @@ const CENTERS_DATA = [
   {
     id: "comp-law",
     name: "Center for Computational Law",
-    shortName: "Lex AI",
+    shortName: "Computational Law",
     badge: "NORMATIVE & SAFETY",
     slogan: "Formal Verification, Deontic Logic, and Normative Constraints in Autonomic AI Systems",
     summary: "Bridges statutory jurisprudence and deep learning architectures through neuro-symbolic reasoning, guaranteeing provable safety boundaries against value drift and statutory hallucination.",
@@ -56,7 +56,7 @@ const CENTERS_DATA = [
   {
     id: "psychology-ai",
     name: "Center for AI Psychology & Digital Physiology",
-    shortName: "AI Psychology",
+    shortName: "AI Psychology & Digital Physiology",
     badge: "BEHAVIORAL PHENOMICS",
     slogan: "Psychometrics-Grounded Behavioral Phenotyping and Human-Agent Cognitive Interaction",
     summary: "Integrates ecological momentary assessments (EMA), vocal biomarkers, and response time dynamics to quantify psychiatric symptom trajectories with rigorous psychometric validity.",
@@ -83,7 +83,7 @@ const CENTERS_DATA = [
   {
     id: "medipharm-ai",
     name: "Center for Medical & Pharmacological AI",
-    shortName: "Medi-Pharm AI",
+    shortName: "Medical & Pharmacological AI",
     badge: "CLINICAL TRANSLATION",
     slogan: "Virtual-Net Micro Fundamental Models for Multi-Disease Decoding",
     summary: "Develops in-silico physiological foundations to decode depression, generalized anxiety, and suicidal ideation from non-contact rPPG camera streams and multi-modal clinical timeseries.",
